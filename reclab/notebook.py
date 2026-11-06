@@ -224,11 +224,18 @@ def ensure_server():
         )
 
 
-def login_url(target="course"):
+def login_url(target="course", lang="zh"):
     if target not in TARGETS:
         raise ValueError("Unknown notebook/editor target")
+    if lang not in ('zh', 'en'):
+        raise ValueError('Choose lang=zh or lang=en')
+    relative = TARGETS[target]
+    if lang == 'en' and relative.startswith('notebooks/') and relative.endswith('.ipynb'):
+        relative = 'notebooks/en/' + Path(relative).name
+        if not (ROOT / relative).is_file():
+            raise FileNotFoundError(relative)
     info = ensure_server()
-    next_path = "/lab/tree/" + TARGETS[target] if TARGETS[target] else "/lab"
+    next_path = "/lab/tree/" + relative if relative else "/lab"
     # /login consumes the token and redirects to a clean URL with a signed cookie.
     return BASE_URL + "/login?" + urlencode({"token": info["token"], "next": next_path})
 

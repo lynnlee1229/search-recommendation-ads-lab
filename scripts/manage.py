@@ -68,8 +68,8 @@ def main():
         raise RuntimeError(
             "Owned process exists but is unhealthy; inspect logs/server.log before restarting."
         )
-    if not (ROOT / "data/processed/manifest.json").exists():
-        raise RuntimeError("Run ./lab.sh setup first.")
+    # Courses and constructed foundations are useful before any dataset exists.
+    # Domain tools report their own preparation requirements when invoked.
     PID.parent.mkdir(exist_ok=True)
     with (ROOT / "logs/server.log").open("a") as log:
         proc = subprocess.Popen(

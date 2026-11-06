@@ -1,0 +1,43 @@
+name: Learning experience checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: learning-checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  reader-and-content:
+    name: Reader, bilingual content, and navigation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Check entry-point document links
+        run: python .github/scripts/check_docs.py
+      - name: Check English lesson parity
+        run: python scripts/check_notebook_translations.py
+      - name: Check Python syntax
+        run: python -m compileall -q reclab scripts
+      - name: Test the dependency-free reader
+        run: |
+          python -c "from pathlib import Path; assert list(Path('tests').glob('test_preview*.py')), 'Reader tests are missing'"
+          python -m unittest discover -s tests -p 'test_preview*.py'
+      - name: Test routes and language behavior
+        run: node --test tests/*.test.cjs

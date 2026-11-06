@@ -103,6 +103,39 @@ def home():
     return FileResponse(ROOT / "web/index.html", headers={"Cache-Control": "no-cache"})
 
 
+@app.get('/api/learning')
+def learning_catalog(lang: str = 'zh'):
+    from .learning_catalog import catalog
+    try:
+        return catalog(lang)
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+
+
+@app.get('/api/lessons/{target}')
+def lesson_content(target: str, lang: str = 'zh'):
+    from .learning_catalog import lesson
+    try:
+        return lesson(target, lang)
+    except KeyError as exc:
+        raise HTTPException(404, 'Unknown lesson') from exc
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+
+
+@app.get('/learn/{target}')
+def read_lesson(target: str, lang: str = 'zh'):
+    from .learning_catalog import notebook_path
+    try:
+        if not notebook_path(target, lang).is_file():
+            raise KeyError(target)
+    except KeyError as exc:
+        raise HTTPException(404, 'Unknown lesson') from exc
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+    return FileResponse(ROOT / 'web/reader.html', headers={'Cache-Control': 'no-cache'})
+
+
 @app.get("/api/health")
 def health():
     return {
@@ -174,7 +207,7 @@ def source_code(module: str):
 
 
 @app.get("/notebooks")
-def open_notebook(request: Request, target: str = "course"):
+def open_notebook(request: Request, target: str = "course", lang: str = 'zh'):
     from .notebook import login_url, TARGETS
     from urllib.parse import urlsplit
 
@@ -185,13 +218,17 @@ def open_notebook(request: Request, target: str = "course"):
         raise HTTPException(403, "Cross-site notebook launch rejected")
     if target not in TARGETS:
         raise HTTPException(404, "Unknown notebook/editor target")
+    if lang not in ('zh', 'en'):
+        raise HTTPException(422, 'Choose lang=zh or lang=en')
     try:
-        response = RedirectResponse(login_url(target), status_code=303)
+        response = RedirectResponse(login_url(target, lang=lang), status_code=303)
         response.headers["Cache-Control"] = "no-store"
         response.headers["Referrer-Policy"] = "no-referrer"
         return response
     except RuntimeError as exc:
         raise HTTPException(503, str(exc)) from exc
+    except FileNotFoundError as exc:
+        raise HTTPException(404, 'Notebook translation unavailable') from exc
 
 
 @app.get("/api/summary")

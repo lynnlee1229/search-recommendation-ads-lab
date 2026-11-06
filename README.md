@@ -1,161 +1,87 @@
-> 广告补课更新：新增47–62共16本，按产品/市场→资格候选→预测→投放反馈覆盖A01–A18；全Lab63本，旧47本和正式模型保留。入口为工作台“广告 → 学习路径 / 讲义与路线”；[学习与复现约定](docs/ADS_CURRICULUM_GUIDE.md)与[逐项验收](docs/ADS_CURRICULUM_COMPLETION.json)。真实10k FM训练出现过拟合，负结果保留；转化、归因与市场为明确构造机制。
+# Search · Ads · Recommendation Lab
 
-# 搜推广告学习 Lab · Search Recommendation Ads Lab
+**Learn how retrieval, ranking, and advertising decisions work—from the first tensor to an inspectable experiment.**
 
-以 Notebook 为主线的同一搜推广告学习系统：真实推荐与XMRec冠军核心方法、SciFact搜索与重排、Criteo点击预测及独立模拟拍卖。共63本 Notebook，配套45份公开讲义。
+English · [简体中文](README.zh-CN.md) · [Start learning](docs/GETTING_STARTED.md) · [Roadmap](docs/ROADMAP.md) · [Contribute](CONTRIBUTING.md)
 
-## 克隆后，一条命令配置
+A bilingual, notebook-first learning lab with **63 lessons across four paths**. Follow a curriculum, read the original sources, predict what will happen, change one variable, and explain the result. Read the lessons before installing the training environment.
 
-实测环境：Apple M1 Pro、16GB、macOS15。macOS要求Apple Silicon和14以上；其他系统尚未做完整验收。建议预留至少5GB磁盘。无需Docker、Podman或GPU。
+| Path | What you will learn | Start here |
+|---|---|---|
+| **Foundations** · 4 lessons | Tensors → gradients → optimization → evaluation | [31 · Tensors](notebooks/en/31_Common_Tensors.ipynb) / [中文](notebooks/31_Common_Tensors.ipynb) |
+| **Search** · 19 lessons | User needs → query processing → retrieval → ranking → suggestions | [35 · Relevance judgments](notebooks/en/35_Search_Needs_Judgments.ipynb) / [中文](notebooks/35_Search_Needs_Judgments.ipynb) |
+| **Advertising** · 23 lessons | Products and markets → eligibility → response prediction → auctions → feedback | [47 · Advertising products](notebooks/en/47_Ads_Products.ipynb) / [中文](notebooks/47_Ads_Products.ipynb) |
+| **Recommendation** · 17 lessons | Behavior → candidates → ranking → training → evaluation | [01 · Data and ItemCF](notebooks/en/01_Data_Features_ItemCF.ipynb) / [中文](notebooks/01_Data_Features_ItemCF.ipynb) |
+
+![The learning workbench: four paths in one Lab](docs/screenshots/english.png)
+
+## Read first. Run when you are ready.
+
+**No installation:** open any notebook linked above on GitHub. English and Chinese editions explain the same experiments. Experiment code and saved outputs remain unchanged; English notebooks add one directory-setup cell. Chinese examples and original output labels are retained where they are part of an experiment.
+
+**Local reader:** clone the repository and run the Python 3.9+ standard-library preview. No package installation, datasets, model downloads, or training are required.
 
 ```bash
 git clone https://github.com/lynnlee1229/search-recommendation-ads-lab.git
 cd search-recommendation-ads-lab
-# macOS缺少OpenMP运行库时先执行：brew install libomp
-./setup.sh
+python3 scripts/preview.py
 ```
 
-需要已有uv或Python3。脚本使用uv>=0.13.6；缺少合适版本时从官方PyPI将固定版uv安装到项目.setup-tools，不替换全局工具。随后：
+Open [localhost:18580](http://127.0.0.1:18580). Choose **中文 / English**, pick a path, and read the lesson with its code and recorded outputs. This mode does not execute code. If a Lab is already running on that port, use the existing Lab.
 
-1. 根据uv.lock安装项目Python3.12环境和依赖。
-2. 从固定原始公开地址下载68项数据/讲义，逐项核对字节数和SHA-256；另校验5份冠军参考源码。
-3. 准备Retailrocket，训练热门/ItemCF与四组双塔；准备XMRec并训练缺失的竞赛实验。
-4. 注册项目内核、执行pytest和教学API检查，顺序执行11~15五本竞赛Notebook。
-
-首次需要联网下载约376MiB公开输入，以及Python和依赖；耗时受网络影响。下载支持有限重试、断点续传及冻结哈希校验。完成文件会跳过，已有成功模型会保留。脚本不会自动启动服务，不要求数据账号或浏览器凭据；若原站要求认证或哈希变化，会失败并报告，不跳过校验。
-
-可选：`./setup.sh --download-only`只安装环境并校验输入；`./setup.sh --no-notebooks`完成训练测试但不执行Notebook。发生下载中断后重新运行同一命令。失败训练目录会保留供检查；不会自动覆盖不完整实验。
-
-## 打开学习入口
+**Run the notebooks:** install the project environment, then open the workbench. This step installs dependencies, including PyTorch and Jupyter, but does not download datasets or train models.
 
 ```bash
+./setup.sh --minimal
 ./lab.sh up
-./lab.sh notebook
 ```
 
-打开 http://127.0.0.1:18580 ，先在“公用”了解实验约定，再选择搜索、广告或推荐。每个领域的“学习路径”提供该领域的 Notebook；课程、交互、实验记录与源码都留在各自模块内。推荐的01/02学习真实数据与双塔，03~10为机制实验，11~15为XMRec实践。原00仍是推荐导览，不充当三领域公用基础课。
+The full workflow was tested on **Apple M1 Pro, 16 GB, macOS 15, Python 3.12**. The macOS setup requires Apple Silicon, macOS 14+, and `brew install libomp`. Other platforms have not received the same end-to-end validation. See [setup, prerequisites, and domain downloads](docs/GETTING_STARTED.md) before running data-dependent lessons. CPU experiments do not require a GPU or Docker.
 
-工作台18580、Jupyter18581均仅监听127.0.0.1。Jupyter保留随机token认证，同源入口会完成本机登录。已有其他程序占用端口时请先核查，脚本不会代替你停止它们。
+## What makes this useful
 
-```bash
-./lab.sh status
-./lab.sh notebook-status
-./lab.sh notebook-stop  # 先保存Notebook
-./lab.sh stop
-```
+- **One curriculum, four clear domains.** Shared foundations come first. Search starts with user needs; advertising starts with products and markets. Algorithms live inside their domain.
+- **Sources beside practice.** Author lectures, papers, and textbooks inform the learning paths. Source references explain which chapter or topic supports the lesson, and where the Lab adds its own teaching exercise.
+- **Short, inspectable experiments.** Trace tensor shapes, hand-check a ranking metric, inspect a query pipeline, compare model variants, or balance an auction ledger.
+- **Real training with visible limits.** Retailrocket and XMRec recommendation, SciFact retrieval and small-budget TinyBERT fine-tuning, and Criteo CTR experiments have recorded protocols. Synthetic mechanisms and simulated markets are labeled separately.
+- **Results you can question.** Splits, configurations, hashes, and limitations are recorded. A fine-tune that does not improve and an FM that overfits remain part of the lesson.
 
-Notebook代码和项目源码可编辑，使用Search Recommendation Ads Lab (Python 3.12)内核。02的Run All会新建训练实验；其他章节分别标注真实数据、构造张量或模拟流量。学习约定见[NOTEBOOK_FIRST.md](docs/NOTEBOOK_FIRST.md)。
+The Lab is for learners who know some Python and want to connect theory to system behavior. Begin with foundations if tensors or evaluation feel unfamiliar; otherwise choose a domain from the [ordered learning paths](docs/GETTING_STARTED.md#choose-a-learning-path).
 
-## 仓库包含什么
+## Course and research sources
 
-- Python源码、前端、63本带教学输出的Notebook、锁文件、测试、公开下载清单。
-- [M1 Pro实测结果](results/2026-10-30-m1-pro/README.md)：聚合指标、训练曲线、配置和校验来源。
-- 数据集、讲义PDF、模型权重、逐用户预测、日志、环境、缓存和认证信息均不上传。`data/`和`artifacts/`由配置脚本在本机生成。
+This is an independent teaching project, with no affiliation or endorsement from the authors below. Original material keeps its original language and rights; the Lab's English lessons are not translations of the authors' complete courses.
 
-已有本机训练产物不会因上传被删除。克隆者会自行下载数据并重训，而不是把静态结果文件当作可用模型。
-
-## 验证与新实验
-
-```bash
-.venv/bin/python -m pytest -q
-.venv/bin/python scripts/verify_restored_lab.py
-.venv/bin/python scripts/execute_notebooks.py --only 11_XMRec_Start 12_XMRec_Features 13_XMRec_Graph 14_XMRec_Ranking 15_XMRec_Evaluation
-.venv/bin/python -m reclab.competition run --tag my-experiment
-```
-
-图模型最多4线程，LightGBM单线程。模型按select选型，audit独立报告；不使用保留测试集调参，不声称隐藏测试成绩。当前方法是教学核心复现，非完整冠军集成、生产实时链路或线上收益证明。
-
-## 数据与方法来源
-
-- [Retailrocket](https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset)
-- [XMRec官方数据](https://github.com/hamedrab/wsdm22_cup_xmrec)
-- [OPDAI冠军方案](https://github.com/opdai/wsdm2022-xmrec-top1-solution)
-- [王树森推荐系统讲义](https://github.com/wangshusen/RecommenderSystem)
-
-固定版本、下载地址、哈希分别记录在DATA_DOWNLOADS.json和docs/xmrec_sources.json。数据与讲义仍受原发布方条款约束，仓库不再分发它们。课程目录覆盖不等于完整论文复现；更多方法边界见[XMREC_REPRODUCTION.md](docs/XMREC_REPRODUCTION.md)。
-
-## 新增：同一系统中的深入实验
-
-```bash
-.venv/bin/python -m reclab.deep_recommendation
-.venv/bin/python scripts/execute_notebooks.py --only 16_Recommendation_Experiments
-```
-
-16章对比均匀/热门/难负例、mean/GRU/带位置注意力、精确/12簇粗索引；默认12000条真实因果样本、4轮、2个种子。正式旧双塔不覆盖。结果进入同一工作台“共享实验记录”，共用实验记录/API，搜索与广告共用该接口。详细协议见[推荐深化](docs/RECOMMENDATION_DEPTH.md)。
-
-
-## 新增：同一系统的真实搜索
-
-```bash
-.venv/bin/python -m reclab.search --download
-.venv/bin/python scripts/execute_notebooks.py --only 17_Search_Experiments
-```
-
-第17章使用公开 SciFact 的完整5,183篇文档与300测试查询，实际比较BM25、冻结MiniLM、RRF、训练线性重排、小型TinyBERT重排及共享粗索引。下载约110MiB固定版本数据/权重，逐项SHA校验；无需账号。未判断文档按不相关计分，神经模型没有微调。每次新建共享实验记录，共享实验记录可实际输入查询检索，推荐功能保留。详见[搜索协议与来源](docs/SEARCH_EXPERIMENTS.md)。搜索是显式可选命令，原setup流程保持推荐/XMRec，避免首次设置自动增加模型下载与推理预算。
-
-
-## 新增：同一系统的真实广告点击与模拟决策
-
-```bash
-.venv/bin/python -m reclab.ads --download
-.venv/bin/python scripts/execute_notebooks.py --only 18_Ads_Experiments
-.venv/bin/python scripts/verify_ads.py
-```
-
-第18章使用官方Criteo真实曝光点击：约46MiB固定SHA分片，明确取前20万行；训练线性/特征树模型，独立select/calibration/audit，报告AUC、logloss、Brier、可靠性与分段。线性在本轮优于树，sigmoid改善不确定，isotonic负结果保留。抽样比例未知，概率不代表线上CTR。二价拍卖、出价和预算pacing使用独立模拟市场，所有收入仅为模拟。
-
-推荐、搜索、广告共用一个仓库、下载校验器、append-only实验目录、FastAPI、共享实验记录与63本Notebook；概率指标单独抽象，领域指标不混比。工作台可实际计算匿名特征的点击概率，并独立改变模拟预算和出价。来源、协议、实测与局限见[广告实验](docs/ADS_EXPERIMENTS.md)。广告下载/训练同样是显式可选，不增加原setup默认预算；数据、权重和逐条明细保留本机。
-
-
-### 广告深入课程（保留18综合章）
-
-| 章节 | 主要问题 | 实际单变量实验 |
+| Domain | Primary references | Scope of the reference |
 |---|---|---|
-| 19 数据与切分 | 曝光标签、缺失、重复与训练边界 | label翻转不改变分区；复制压力测试；训练词表覆盖 |
-| 20 线性特征 | 稀疏onehot、缺失指示、系数含义 | 40k真实曝光，数值特征 vs 加类别，实际两次拟合 |
-| 21 非线性 | 交叉表达、容量与过拟合 | 构造XOR的交叉对照；真实树7/15叶实际训练 |
-| 22 校准 | proper scores、分箱敏感性与审计 | 独立calibration重拟合同一sigmoid；5/10/20箱对照 |
-| 23 拍卖出价 | 二价支付、外部竞争与价值 | 单请求手算、固定市场出价倍数与三种子 |
-| 24 预算整合 | pacing、资格与预测偏差 | 同市场开关pacing、紧预算、估计概率偏差压力测试 |
+| Recommendation | [Shusen Wang · Recommender System](https://github.com/wangshusen/RecommenderSystem) | Chinese course; 45 lecture PDFs are mapped to Lab topics. Coverage varies from mechanisms to real-data experiments. |
+| Search | [Shusen Wang · Search Engine](https://github.com/wangshusen/SearchEngine/tree/7339c6b126e314abdb74a89adb033d39d8e3d37b), [BERT](https://arxiv.org/abs/1810.04805v2), [BERT passage reranking](https://arxiv.org/abs/1901.04085v5) | The pinned course has six outline modules and nine linked PDFs. Later modules are outline-level references; Lab lessons supply additional practice. |
+| Advertising | [《计算广告》第2版 publisher table of contents](https://read.douban.com/ebook/371259701/), [Chinese computational-advertising chapter on GitHub](https://github.com/SocratesClub/ccrbook/tree/6dbd5650f2adc6e257e5bd5d156bc50a72560ee9/slides), [Zhang & Xu · CIKM 2016 RTB tutorial](https://wnzhang.net/slides/cikm-16-rtb-full.pdf) | A product-led syllabus, one Chinese book-companion slide chapter, and an English technical tutorial. None is presented as a complete modern production course. |
 
-每章先预测、输入/形状检查、短格运行与解释练习。20/21的教学训练也新建同一ads实验记录，仅报告select，**不替换200k正式实验**；数据、权重与逐条结果仍留本机。工作台课程目录统一提供63本入口。批量执行可用 `scripts/execute_notebooks.py --only` 指定19~24的完整文件stem。
+Pinned revisions, source roles, data/model provenance, and reuse boundaries are recorded in [third-party attribution](docs/THIRD_PARTY.md) and the [source audit](docs/COURSE_AUDIT_SOURCES.json).
 
+## Read the evidence correctly
 
-### 搜索深入课程（保留17综合章）
+| Label | What it demonstrates | What it does not establish |
+|---|---|---|
+| **Real-data experiment** | A stated method on a fixed public sample and split | Production quality, a new blind benchmark, or online lift |
+| **Constructed mechanism** | An equation, invariant, or failure case on controlled examples | Accuracy on real user behavior |
+| **Simulated market** | Payments, allocation, or budget behavior under explicit assumptions | Actual revenue, causal advertiser value, or a production RTB system |
 
-25 任务与qrels → 26 倒排与BM25 → 27 语义编码 → 28 近似索引 → 29 融合与重排训练 → 30 误差分析与统一服务。六本共32个短代码格，含手算/形状断言、真实查询单变量实验、实际两组训练与五种API逐文档核验。[逐章内容、执行命令和子集边界](docs/SEARCH_COURSE.md)。广告19～24与搜索25～30共用同一实验目录、数据与服务；旧综合章不覆盖。
+The current search and advertising paths cover **18 core teaching units each**. “Covered” describes those teaching goals. Trained query understanding, production ANN, real conversion/attribution data, and concurrent billing are still deeper work; see the [concrete gaps and acceptance criteria](docs/ROADMAP.md).
 
-## 按模块学习
+## Reproduce and contribute
 
-一级导航固定为**公用 / 搜索 / 广告 / 推荐**。算法和工具只出现在所属模块内；双塔训练位于“推荐 → 双塔训练”，不会与领域并列。
+The full setup prepares the original recommendation/XMRec experiments; search and advertising are opt-in:
 
-| 模块 | 内容与边界 |
-|---|---|
-| 公用 | 起步、基础学习路径（31–34）、实验方法、全局实验台账、公共源码；共享方法与设施，不汇集所有领域工具 |
-| 搜索 | 搜索学习路径、检索实验、搜索实验记录、搜索源码 |
-| 广告 | 广告学习路径、真实点击预测、独立模拟拍卖与预算、广告实验记录、广告源码 |
-| 推荐 | 推荐学习路径、数据与基线、召回与重排、特征与样本、双塔训练、推荐实验记录、讲义与论文、推荐源码 |
+```bash
+./setup.sh                                       # original recommendation + XMRec setup
+.venv/bin/python -m reclab.search --download       # SciFact and frozen models
+.venv/bin/python -m reclab.ads --download          # Criteo sample and CTR models
+```
 
-63本Notebook按实际内容归属：公用4本、推荐17本（含原00与01–03）、搜索19本、广告23本。每条路径内部再按入门、机制、综合或深入阶段组织，可查找本模块章节。领域实验记录自动限制在当前领域；全局台账只在公用模块。源码同样按公共/领域边界收纳。旧 `#experiments` 等链接自动转到有正确父模块的地址，刷新与浏览器前进后退均保留层级。
+These commands download inputs and run experiments. Read [Getting started](docs/GETTING_STARTED.md) for storage, platform, and rerun details. Datasets, model weights, credentials, and per-example predictions stay outside Git; compact results and teaching outputs are versioned.
 
-公用新增4本独立基础课（31–34）：张量与线性代数 → 计算图与梯度 → 优化与泛化 → 评分、概率与排序评估。原31本保持内容与领域归属：推荐17、搜索7、广告7。新增课为构造机制练习，不使用正式模型或业务日志。[逐章内容与验收](docs/COMMON_FOUNDATIONS.md)。
+Useful contributions include a clearer explanation, a numerical counterexample, a translation correction, a reproducible platform fix, or a well-scoped new experiment. Start with the [contribution guide](CONTRIBUTING.md) and [roadmap](docs/ROADMAP.md). If the Lab helps you learn, a star makes it easier to find again; an issue describing where you got stuck helps improve the next lesson.
 
-首次安装默认只准备推荐/XMRec；搜索与广告按各节命令显式准备。原API、Python包名reclab、内核ID、数据与Git历史保持兼容。前端结构与旧链接回归可运行 `node --test tests/navigation.test.cjs`（Node18+，不增加Python安装依赖）。
-
-![按模块组织的工作台](docs/screenshots/overview.png)
-
-[窄屏界面截图](docs/screenshots/mobile.png)
-
-## 课程先行的搜索与广告补齐路线
-
-已按公开课程重新盘点，而非按现有实验倒推课程：
-
-- [搜索完整学习路线与缺口](docs/SEARCH_LEARNING_ROADMAP.md)：王树森课程六大模块拆为18个教学单元，逐项列出现有证据、缺口与验收要求。
-- [广告完整学习路线与缺口](docs/ADS_LEARNING_ROADMAP.md)：产品与市场先行，再到预测、分配、竞价与反馈，共18个教学单元。
-- [课程来源快照与结构化审计](docs/COURSE_AUDIT_SOURCES.json)：明确区分作者讲义、出版目录、GitHub单章PPT、课程仓库、论文索引与社区材料。
-
-路线是待补齐课程的设计，不代表所有单元已实现。搜索和广告分别在新session中串行补齐，仍使用本仓库、同一服务与原始实验；公用31–34作为先修。
-
-## 搜索核心课程补齐
-
-搜索学习路径现按S01–S18组织，新增35–46十二本，旧35本保持；搜索阶段完成时全Lab47本，广告补齐后为63本。先修公用31–34，再从需求/判断进入查询处理、召回、BERT真实小预算微调、排序与查询推荐。工作台搜索模块有“讲义与路线”。详见[搜索课程](docs/SEARCH_COURSE.md)、[训练边界](docs/SEARCH_TRAINING_PROTOCOL.md)与[逐项完成证据](docs/SEARCH_CURRICULUM_COMPLETION.json)。构造机制与真实训练分开标注，正式模型不变。
+[English interface screenshot](docs/screenshots/english.png) · [Technical protocols](docs/GETTING_STARTED.md#experiment-protocols) · [License scope](LICENSE.md) · [Third-party materials and rights](docs/THIRD_PARTY.md)

@@ -1,0 +1,29 @@
+name: Reproducible bug / 可复现问题
+description: Report a reader, notebook, experiment, or setup failure / 报告阅读、Notebook、实验或安装问题
+title: '[Bug] '
+body:
+  - type: input
+    id: environment
+    attributes:
+      label: Environment / 环境
+      description: OS, architecture, Python, browser, and reader/minimal/full mode / 系统、架构、Python、浏览器、运行模式
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      description: Command or page, input, expected behavior, actual behavior / 命令或页面、输入、预期与实际行为
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Sanitized error / 脱敏错误
+      description: Remove tokens, credentials, private paths, and user-level data / 去除 token、凭据、私人路径和用户级数据
+      render: text
+  - type: textarea
+    id: data
+    attributes:
+      label: Data preparation / 数据准备情况
+      description: Which setup or domain command has completed? Include a run ID only if relevant / 哪个安装或领域命令已完成？必要时附 run ID

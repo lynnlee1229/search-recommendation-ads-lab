@@ -1,0 +1,3353 @@
+{
+  "version": 1,
+  "repository": "https://github.com/lynnlee1229/search-recommendation-ads-lab",
+  "sources": [
+    {
+      "id": "S-WANG",
+      "title": {
+        "zh": "王树森 · 搜索引擎技术",
+        "en": "Shusen Wang · Search Engine Technology"
+      },
+      "url": "https://github.com/wangshusen/SearchEngine/tree/7339c6b126e314abdb74a89adb033d39d8e3d37b",
+      "type": {
+        "zh": "作者课程",
+        "en": "Author course"
+      },
+      "language": "zh",
+      "scope": {
+        "zh": "固定版本：六模块目录、9份PDF。查询处理、召回、排序、查询推荐四模块主要是目录，Lab实验为独立教学实现。",
+        "en": "Pinned six-module syllabus with nine linked PDFs. Query processing, retrieval, ranking and suggestions are primarily outlines; Lab experiments are independent teaching implementations."
+      }
+    },
+    {
+      "id": "R-WANG",
+      "title": {
+        "zh": "王树森 · 工业界的推荐系统",
+        "en": "Shusen Wang · Recommender Systems"
+      },
+      "url": "https://github.com/wangshusen/RecommenderSystem",
+      "type": {
+        "zh": "作者课程",
+        "en": "Author course"
+      },
+      "language": "zh",
+      "scope": {
+        "zh": "45份讲义与逐课实践入口；主题有练习不代表完整复现论文。原件保留原语言与原作者权利。",
+        "en": "45 lecture references mapped to practice. An exercise on a topic is not a complete paper reproduction. Originals retain their language and authors’ rights."
+      }
+    },
+    {
+      "id": "S-IIR",
+      "title": {
+        "zh": "信息检索导论 · Manning / Raghavan / Schütze",
+        "en": "Introduction to Information Retrieval · Manning / Raghavan / Schütze"
+      },
+      "url": "https://nlp.stanford.edu/IR-book/",
+      "type": {
+        "zh": "作者教材",
+        "en": "Author textbook"
+      },
+      "language": "en",
+      "scope": {
+        "zh": "补充倒排、查询处理、检索与评估。原站在本次网络核验中连接中断；可先用王树森讲义。",
+        "en": "Supplementary indexing, query processing, retrieval and evaluation. The original host closed connections during this network check; Wang’s lecture links remain available."
+      },
+      "availability": {
+        "zh": "原站连接不稳定",
+        "en": "Original host connection unreliable"
+      }
+    },
+    {
+      "id": "S-BERT",
+      "title": {
+        "zh": "BERT 原论文",
+        "en": "BERT: Pre-training of Deep Bidirectional Transformers"
+      },
+      "url": "https://arxiv.org/abs/1810.04805v2",
+      "type": {
+        "zh": "原论文",
+        "en": "Original paper"
+      },
+      "language": "en",
+      "scope": {
+        "zh": "模型、输入与预训练背景；本Lab不复现BERT预训练。",
+        "en": "Architecture, inputs and pre-training background. This Lab does not reproduce BERT pre-training."
+      }
+    },
+    {
+      "id": "S-RERANK",
+      "title": {
+        "zh": "Passage Re-ranking with BERT",
+        "en": "Passage Re-ranking with BERT"
+      },
+      "url": "https://arxiv.org/abs/1901.04085v5",
+      "type": {
+        "zh": "原论文",
+        "en": "Original paper"
+      },
+      "language": "en",
+      "scope": {
+        "zh": "成对重排方法参考；小预算TinyBERT教学实验不是原论文基准复现。",
+        "en": "Reference for query–passage cross-encoder scoring. The small TinyBERT workshop is not a reproduction of the paper’s benchmark."
+      }
+    },
+    {
+      "id": "A-LIU",
+      "title": {
+        "zh": "刘鹏、王超 · 计算广告（第2版）公开目录",
+        "en": "Liu Peng & Wang Chao · Computational Advertising, 2nd ed."
+      },
+      "url": "https://read.douban.com/ebook/371259701/",
+      "type": {
+        "zh": "出版教材目录",
+        "en": "Publisher book outline"
+      },
+      "language": "zh",
+      "scope": {
+        "zh": "只核对公开目录与简介；付费教材，不是免费全套讲义。",
+        "en": "Only the public table of contents and introduction were checked. A paid textbook, not a free complete lecture set."
+      }
+    },
+    {
+      "id": "A-CCR",
+      "title": {
+        "zh": "计算传播学导论 · 第8章计算广告",
+        "en": "Introduction to Computational Communication · Chapter 8"
+      },
+      "url": "https://github.com/SocratesClub/ccrbook/blob/6dbd5650f2adc6e257e5bd5d156bc50a72560ee9/slides/Chapter%208%20%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A.pptx",
+      "type": {
+        "zh": "作者中文PPT",
+        "en": "Author slide deck"
+      },
+      "language": "zh",
+      "scope": {
+        "zh": "GitHub固定版本96页单章PPT：产品、目标、博弈、匹配、拍卖。不是完整广告工程课。",
+        "en": "A pinned 96-slide Chinese chapter on products, objectives, games, matching and auctions. Not a complete advertising engineering course."
+      }
+    },
+    {
+      "id": "A-NJU",
+      "title": {
+        "zh": "南京大学 · 计算传播与广告（2015）",
+        "en": "Nanjing University · Computational Communication and Advertising (2015)"
+      },
+      "url": "https://github.com/SocratesClub/computational-advertising-2015",
+      "type": {
+        "zh": "大学课程大纲",
+        "en": "University syllabus"
+      },
+      "language": "zh",
+      "scope": {
+        "zh": "公开课程表与作业；不宣称所有课件可下载。历史市场描述不代表当前市场。",
+        "en": "Public syllabus and assignments; not all lecture decks are available. Historical market descriptions are not current market facts."
+      }
+    },
+    {
+      "id": "A-RTB",
+      "title": {
+        "zh": "张伟楠 / 徐健 · CIKM 2016 RTB教程",
+        "en": "Weinan Zhang / Jian Xu · CIKM 2016 RTB Tutorial"
+      },
+      "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf",
+      "type": {
+        "zh": "作者教程",
+        "en": "Author tutorial"
+      },
+      "language": "en",
+      "scope": {
+        "zh": "164页原作者讲义：响应预测、竞价、归因、pacing、定向、底价。Lab机制自编，非完整论文配方复现。",
+        "en": "164 author slides covering response prediction, bidding, attribution, pacing, targeting and reserve prices. Lab mechanisms are independently authored, not full paper replications."
+      }
+    },
+    {
+      "id": "A-PAPERS",
+      "title": {
+        "zh": "张伟楠 · RTB论文索引",
+        "en": "Weinan Zhang · RTB Paper Index"
+      },
+      "url": "https://github.com/wnzhang/rtb-papers/tree/ddf66afe2371778a54671e7890d12cb8a4d7dd7f",
+      "type": {
+        "zh": "作者论文索引",
+        "en": "Author paper index"
+      },
+      "language": "en",
+      "scope": {
+        "zh": "用于延伸阅读和追溯论文；索引本身不是讲义。",
+        "en": "Further reading and paper discovery; the index itself is not a lecture."
+      }
+    },
+    {
+      "id": "R-XMREC",
+      "title": {
+        "zh": "WSDM Cup 2022 · XMRec官方任务",
+        "en": "WSDM Cup 2022 · Official XMRec Task"
+      },
+      "url": "https://github.com/hamedrab/wsdm22_cup_xmrec",
+      "type": {
+        "zh": "官方任务与数据",
+        "en": "Official task and data"
+      },
+      "language": "en",
+      "scope": {
+        "zh": "官方跨市场推荐任务。仅报告本地公开切分；不声称隐藏榜单成绩。",
+        "en": "Official cross-market recommendation task. Only local public-split results are reported, not hidden leaderboard scores."
+      }
+    },
+    {
+      "id": "R-OPDAI",
+      "title": {
+        "zh": "OPDAI · XMRec冠军方案",
+        "en": "OPDAI · XMRec Winning Solution"
+      },
+      "url": "https://github.com/opdai/wsdm2022-xmrec-top1-solution",
+      "type": {
+        "zh": "方案作者代码",
+        "en": "Solution authors’ code"
+      },
+      "language": "en",
+      "scope": {
+        "zh": "选取稀疏ItemCF、图召回和排序等核心方法。非完整冠军集成。",
+        "en": "Selected sparse ItemCF, graph retrieval and ranking methods. Not the complete winning ensemble."
+      }
+    },
+    {
+      "id": "C-LAB",
+      "title": {
+        "zh": "Lab · 实验与证据约定",
+        "en": "Lab · Experiment and Evidence Guide"
+      },
+      "url": "https://github.com/lynnlee1229/search-recommendation-ads-lab/blob/main/docs/NOTEBOOK_FIRST.md",
+      "type": {
+        "zh": "原创教学指南",
+        "en": "Original teaching guide"
+      },
+      "language": "zh",
+      "scope": {
+        "zh": "自编先修：张量、梯度、优化与评估。不是外部课程的官方翻译或认证。",
+        "en": "Original prerequisites: tensors, gradients, optimization and evaluation. Not an official translation or certification by an external course."
+      }
+    }
+  ],
+  "modules": [
+    {
+      "id": "common",
+      "title": {
+        "zh": "公用基础",
+        "en": "Foundations"
+      },
+      "description": {
+        "zh": "从张量、梯度、优化到可信评估，为三个领域建立共同语言。",
+        "en": "Build a shared language of tensors, gradients, optimization and trustworthy evaluation."
+      },
+      "prerequisites": {
+        "zh": "会读基础Python与数组即可；不需要先下载数据。",
+        "en": "Basic Python and arrays; no dataset download is required to read."
+      },
+      "phases": [
+        {
+          "title": {
+            "zh": "基础 · 从张量到评估",
+            "en": "Foundations · tensors to evaluation"
+          },
+          "description": {
+            "zh": "张量与线性代数 → 计算图与梯度 → 优化与泛化 → 评分、概率与排序评估。小数组构造机制实验，再进入领域路径。",
+            "en": "Tensors and linear algebra → computation graphs and gradients → optimization and generalization → scores, probabilities and ranking metrics. Small constructed experiments before a domain track."
+          },
+          "chapters": [
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      ],
+      "source_ids": [
+        "C-LAB"
+      ],
+      "units": [
+        {
+          "id": "C01",
+          "title": {
+            "zh": "张量与线性代数",
+            "en": "Tensors and linear algebra"
+          },
+          "objective": {
+            "zh": "检查形状、内积与广播，解释相似度和batch维度。",
+            "en": "Inspect shapes, dot products and broadcasting; explain similarity and batch dimensions."
+          },
+          "evidence": {
+            "zh": "小数组构造机制",
+            "en": "Constructed small-array mechanism"
+          },
+          "limitation": {
+            "zh": "先修机制练习，不是业务数据或线上收益证据。",
+            "en": "A prerequisite mechanism exercise, not evidence from business data or online outcomes."
+          },
+          "chapters": [
+            31
+          ],
+          "references": [
+            {
+              "source_id": "C-LAB",
+              "locator": {
+                "zh": "先预测 → 改一个变量 → 运行 → 解释",
+                "en": "Predict → change one variable → run → explain"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "C02",
+          "title": {
+            "zh": "计算图与梯度",
+            "en": "Computation graphs and gradients"
+          },
+          "objective": {
+            "zh": "手算局部导数，比较自动求导与数值差分。",
+            "en": "Calculate local derivatives and compare autograd with finite differences."
+          },
+          "evidence": {
+            "zh": "小数组构造机制",
+            "en": "Constructed small-array mechanism"
+          },
+          "limitation": {
+            "zh": "先修机制练习，不是业务数据或线上收益证据。",
+            "en": "A prerequisite mechanism exercise, not evidence from business data or online outcomes."
+          },
+          "chapters": [
+            32
+          ],
+          "references": [
+            {
+              "source_id": "C-LAB",
+              "locator": {
+                "zh": "先预测 → 改一个变量 → 运行 → 解释",
+                "en": "Predict → change one variable → run → explain"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "C03",
+          "title": {
+            "zh": "优化与泛化",
+            "en": "Optimization and generalization"
+          },
+          "objective": {
+            "zh": "仅用训练点拟合多项式系数，比较学习率、模型容量与泛化。",
+            "en": "Fit polynomial coefficients on training points only; compare learning rate, model capacity and generalization."
+          },
+          "evidence": {
+            "zh": "小数组构造机制",
+            "en": "Constructed small-array mechanism"
+          },
+          "limitation": {
+            "zh": "先修机制练习，不是业务数据或线上收益证据。",
+            "en": "A prerequisite mechanism exercise, not evidence from business data or online outcomes."
+          },
+          "chapters": [
+            33
+          ],
+          "references": [
+            {
+              "source_id": "C-LAB",
+              "locator": {
+                "zh": "先预测 → 改一个变量 → 运行 → 解释",
+                "en": "Predict → change one variable → run → explain"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "C04",
+          "title": {
+            "zh": "评分、概率与评估",
+            "en": "Scores, probabilities and evaluation"
+          },
+          "objective": {
+            "zh": "区分分数、概率、排序与校准，手算小样例指标。",
+            "en": "Distinguish scores, probabilities, ranking and calibration; calculate small-example metrics."
+          },
+          "evidence": {
+            "zh": "小数组构造机制",
+            "en": "Constructed small-array mechanism"
+          },
+          "limitation": {
+            "zh": "先修机制练习，不是业务数据或线上收益证据。",
+            "en": "A prerequisite mechanism exercise, not evidence from business data or online outcomes."
+          },
+          "chapters": [
+            34
+          ],
+          "references": [
+            {
+              "source_id": "C-LAB",
+              "locator": {
+                "zh": "先预测 → 改一个变量 → 运行 → 解释",
+                "en": "Predict → change one variable → run → explain"
+              }
+            }
+          ],
+          "status": "core-covered"
+        }
+      ],
+      "lectures": []
+    },
+    {
+      "id": "search",
+      "title": {
+        "zh": "搜索",
+        "en": "Search"
+      },
+      "description": {
+        "zh": "理解用户查询，把文档召回、相关性判断和排序连成完整路线。",
+        "en": "Connect user queries to document retrieval, relevance judgments and ranking."
+      },
+      "prerequisites": {
+        "zh": "先修31–34；先学需求与相关性，再学查询、召回和排序。",
+        "en": "Start with 31–34, then needs and relevance before queries, retrieval and ranking."
+      },
+      "phases": [
+        {
+          "title": {
+            "zh": "基础与相关性 · 需求决定判断",
+            "en": "Needs and relevance"
+          },
+          "description": {
+            "zh": "S01–S02：任务、满意度、分档、分歧、pooling与真实qrels。先修公用31–34。",
+            "en": "S01–S02: tasks, satisfaction, graded judgments, disagreement, pooling and real qrels. Start with Foundations 31–34."
+          },
+          "chapters": [
+            35,
+            25
+          ]
+        },
+        {
+          "title": {
+            "zh": "查询处理 · 切分到改写",
+            "en": "Query understanding"
+          },
+          "description": {
+            "zh": "S03–S06：规范化、中文分词、字段词权重、意图拒识、纠错与漂移；人工例子讲机制。",
+            "en": "S03–S06: normalization, Chinese tokenization, term and field weights, intent rejection, spelling and semantic drift. Constructed examples make the mechanisms visible."
+          },
+          "chapters": [
+            36,
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "title": {
+            "zh": "召回 · 索引、词法、向量与缓存",
+            "en": "Retrieval"
+          },
+          "description": {
+            "zh": "S07–S11：位置/布尔 → BM25 → 冻结语义表示 → 粗簇近似预算 → 候选缓存一致性。28不是HNSW复现。",
+            "en": "S07–S11: positional / Boolean indexing → BM25 → frozen semantic representations → coarse-cluster candidate budgets → cache consistency. Chapter 28 is not HNSW."
+          },
+          "chapters": [
+            40,
+            26,
+            27,
+            28,
+            41
+          ]
+        },
+        {
+          "title": {
+            "zh": "相关性与排序 · 推理、真训练、目标",
+            "en": "Relevance and ranking"
+          },
+          "description": {
+            "zh": "S12–S15：成对BERT输入和全参数小预算微调 → 排序loss → 真实融合 → 质量与多样性；只报教学select。",
+            "en": "S12–S15: BERT pair inputs and small-budget fine-tuning → ranking losses → real-data fusion → quality and diversity. Training workshops report teaching selection metrics."
+          },
+          "chapters": [
+            42,
+            43,
+            29,
+            44
+          ]
+        },
+        {
+          "title": {
+            "zh": "查询推荐与系统复盘",
+            "en": "Suggestions and system diagnosis"
+          },
+          "description": {
+            "zh": "S16–S18：构造会话的建议召回排序 → 可追溯链路和故障回退 → 正式服务误差诊断。",
+            "en": "S16–S18: constructed query sessions → traceable requests and fallbacks → error diagnosis in the real-data service."
+          },
+          "chapters": [
+            45,
+            46,
+            30
+          ]
+        },
+        {
+          "title": {
+            "zh": "参考 · 已有综合实验",
+            "en": "Reference · integrated search experiment"
+          },
+          "description": {
+            "zh": "学习主线后的真实SciFact综合参考；旧Notebook、正式模型和已见测试协议保持。",
+            "en": "The original SciFact experiment after the core sequence. Original models and previously inspected test results remain unchanged."
+          },
+          "chapters": [
+            17
+          ]
+        }
+      ],
+      "source_ids": [
+        "S-WANG",
+        "S-IIR",
+        "S-BERT",
+        "S-RERANK"
+      ],
+      "units": [
+        {
+          "id": "S01",
+          "title": {
+            "zh": "任务、用户需求与搜索产品",
+            "en": "Tasks, needs and search products"
+          },
+          "objective": {
+            "zh": "补充不同检索场景、用户满意度与离线代理指标之间的区别；构造会话对比，不能把NDCG当满意度。",
+            "en": "Distinguish the user’s information need from an offline metric."
+          },
+          "evidence": {
+            "zh": "构造机制",
+            "en": "constructed mechanism"
+          },
+          "limitation": {
+            "zh": "人工会话不代表真实满意度；NDCG是离线代理。",
+            "en": "Artificial sessions do not measure real satisfaction; NDCG is an offline proxy."
+          },
+          "chapters": [
+            35
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "基础第1–2讲",
+                "en": "Basics, lectures 1–2"
+              },
+              "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/01_Basics_01.pdf"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S02",
+          "title": {
+            "zh": "相关性分档、标注与评估设计",
+            "en": "Graded relevance, judgments and evaluation"
+          },
+          "objective": {
+            "zh": "增加分级相关性、标注分歧与pooling；手算gain/discount；旧SciFact读取将正标签二值化，不冒充分级标签实验。",
+            "en": "Calculate graded gains and inspect disagreement and incomplete judgments."
+          },
+          "evidence": {
+            "zh": "真实数据与构造机制",
+            "en": "Real qrels and constructed graded judgments"
+          },
+          "limitation": {
+            "zh": "构造分级判断；SciFact保持二值与不完整qrels。",
+            "en": "Constructed graded judgments; SciFact keeps binary and incomplete qrels."
+          },
+          "chapters": [
+            35,
+            25
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "相关性第1–2讲",
+                "en": "Relevance, lectures 1–2"
+              },
+              "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/02_Rel_01.pdf"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S03",
+          "title": {
+            "zh": "文本规范化、中文分词与新词",
+            "en": "Normalization, Chinese tokenization and new words"
+          },
+          "objective": {
+            "zh": "做字典切分、歧义与OOV的可运行对照；解释神经子词与词切分的不同，不把手写词例称真实业务评估。",
+            "en": "Compare dictionary segmentations and explain ambiguity and out-of-vocabulary terms."
+          },
+          "evidence": {
+            "zh": "构造机制",
+            "en": "constructed Chinese mechanism"
+          },
+          "limitation": {
+            "zh": "人工词例、双向字典匹配与候选计数；没有中文神经切词模型训练。",
+            "en": "Artificial word examples, bidirectional dictionary matching and candidate counts; no trained neural Chinese tokenizer."
+          },
+          "chapters": [
+            36
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "目录：查询词处理 → 分词",
+                "en": "Syllabus: Query processing → tokenization"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S04",
+          "title": {
+            "zh": "查询词权重与字段匹配",
+            "en": "Term weights and field matching"
+          },
+          "objective": {
+            "zh": "从词权重出发学习标题/正文、必选词与软权重，比较改权重后的候选和误召；不能将IDF覆盖等同完整query理解。",
+            "en": "Change a field or term weight and inspect both retrieval gains and false matches."
+          },
+          "evidence": {
+            "zh": "构造机制",
+            "en": "constructed field ranking"
+          },
+          "limitation": {
+            "zh": "四文档字段线性机制，不是BM25F或生产词权重学习。",
+            "en": "A four-document linear field mechanism, not BM25F or production term-weight learning."
+          },
+          "chapters": [
+            37
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "相关性第3讲：文本匹配分数",
+                "en": "Relevance, lecture 3: text matching"
+              },
+              "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/02_Rel_03.pdf"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S05",
+          "title": {
+            "zh": "类目与意图识别",
+            "en": "Categories, intent and rejection"
+          },
+          "objective": {
+            "zh": "先定义可检验标签与任务，再实现小样本训练或清楚标注规则机制；数据类别不能伪称电商类目或中文用户意图。",
+            "en": "Define intent labels and let uncertain rules reject rather than force a class."
+          },
+          "evidence": {
+            "zh": "构造机制",
+            "en": "constructed rules"
+          },
+          "limitation": {
+            "zh": "主题/动作人工标签与规则拒识，无真实用户意图准确率。",
+            "en": "Manually labeled topics/actions and rule-based rejection; no real intent-accuracy claim."
+          },
+          "chapters": [
+            38
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "目录：查询词处理 → 类目与意图识别",
+                "en": "Syllabus: Query processing → categories and intent"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S06",
+          "title": {
+            "zh": "查询改写、纠错与语义漂移",
+            "en": "Query rewriting, spelling and semantic drift"
+          },
+          "objective": {
+            "zh": "建立同义/拼写/约束词改写与原查询对照；评估漏召与误召、改写失败和原查询回退；不以生成流畅代替检索正确。",
+            "en": "Compare original and rewritten queries, including a fallback on semantic drift."
+          },
+          "evidence": {
+            "zh": "构造机制",
+            "en": "constructed rewrite"
+          },
+          "limitation": {
+            "zh": "固定纠错同义规则和故意失败改写，无生成模型收益。",
+            "en": "Fixed correction and synonym rules, including deliberate failures; no generative-model gain."
+          },
+          "chapters": [
+            39
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "目录：查询词处理 → 查询词改写",
+                "en": "Syllabus: Query processing → query rewriting"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S07",
+          "title": {
+            "zh": "倒排索引、布尔与位置约束",
+            "en": "Inverted indexes, Boolean and positional constraints"
+          },
+          "objective": {
+            "zh": "补AND/OR、短语与位置、字段约束；建小索引并用穷举核验。增量/删除作为工程拓展，不包装成分布式引擎。",
+            "en": "Build positional postings and verify Boolean/phrase results against exhaustive scans."
+          },
+          "evidence": {
+            "zh": "构造机制",
+            "en": "exhaustive algorithm check"
+          },
+          "limitation": {
+            "zh": "四文档位置索引、穷举核验与重建换代，不是分布式增量引擎。",
+            "en": "A four-document positional index, exhaustive checks and rebuild generations; not a distributed incremental engine."
+          },
+          "chapters": [
+            40
+          ],
+          "references": [
+            {
+              "source_id": "S-IIR",
+              "locator": {
+                "zh": "第1–2章：布尔检索、词项与倒排",
+                "en": "Chapters 1–2: Boolean retrieval, terms and postings"
+              }
+            },
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "目录：召回 → 倒排索引",
+                "en": "Syllabus: Retrieval → inverted indexes"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S08",
+          "title": {
+            "zh": "词法相关性与BM25",
+            "en": "Lexical relevance and BM25"
+          },
+          "objective": {
+            "zh": "复用现有章节；放在查询分析与倒排之后，补与前序词权重及误差的连接。",
+            "en": "Inspect BM25 terms and compare rankings on real queries."
+          },
+          "evidence": {
+            "zh": "真实数据实验",
+            "en": "real SciFact"
+          },
+          "limitation": {
+            "zh": "26章原真实BM25实验；已见测试只作诊断。",
+            "en": "The original real-data BM25 experiment in 26. Previously inspected test results are diagnostic."
+          },
+          "chapters": [
+            26
+          ],
+          "references": [
+            {
+              "source_id": "S-IIR",
+              "locator": {
+                "zh": "第11章：概率信息检索",
+                "en": "Chapter 11: probabilistic information retrieval"
+              }
+            },
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "相关性第3讲",
+                "en": "Relevance, lecture 3"
+              },
+              "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/02_Rel_03.pdf"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S09",
+          "title": {
+            "zh": "语义表示与向量召回",
+            "en": "Semantic representations and dense retrieval"
+          },
+          "objective": {
+            "zh": "保留冻结编码器教学；明确并未完成召回编码器训练或工业embedding系统。",
+            "en": "Trace tokenized text through frozen embeddings to nearest documents."
+          },
+          "evidence": {
+            "zh": "真实数据实验",
+            "en": "real frozen encoder"
+          },
+          "limitation": {
+            "zh": "27章冻结MiniLM，不是召回编码器训练。",
+            "en": "Frozen MiniLM in chapter 27; no retrieval-encoder training."
+          },
+          "chapters": [
+            27
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "目录：召回 → 向量召回",
+                "en": "Syllabus: Retrieval → vector retrieval"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S10",
+          "title": {
+            "zh": "近似索引与候选预算",
+            "en": "Approximate indexes and candidate budgets"
+          },
+          "objective": {
+            "zh": "保留机制验收，不标成HNSW/FAISS完整复现；图索引、压缩等列进阶选修，可按资源补最小对照。",
+            "en": "Measure the recall–candidate-budget tradeoff against an exact oracle."
+          },
+          "evidence": {
+            "zh": "真实数据实验",
+            "en": "coarse-index mechanism on real vectors"
+          },
+          "limitation": {
+            "zh": "28章12簇教学索引，不是HNSW/FAISS全实现。",
+            "en": "A 12-cluster teaching index in 28, not an implementation of HNSW or FAISS."
+          },
+          "chapters": [
+            28
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "目录：向量召回；Lab展开候选预算",
+                "en": "Syllabus: vector retrieval; candidate-budget exercise by the Lab"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S11",
+          "title": {
+            "zh": "缓存召回与一致性",
+            "en": "Candidate caches and consistency"
+          },
+          "objective": {
+            "zh": "模拟缓存命中、TTL、陈旧文档与回退；统计成本和结果差异，区分特征缓存、候选缓存与结果缓存。",
+            "en": "Invalidate cached candidates correctly when queries or index generations change."
+          },
+          "evidence": {
+            "zh": "构造机制",
+            "en": "constructed cache"
+          },
+          "limitation": {
+            "zh": "逻辑时钟与loader调用成本，不是实测线上缓存收益。",
+            "en": "A logical clock and loader-call cost, not measured production cache gains."
+          },
+          "chapters": [
+            41
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "目录：召回 → 缓存召回",
+                "en": "Syllabus: Retrieval → caching"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S12",
+          "title": {
+            "zh": "BERT相关性打分与推理",
+            "en": "BERT relevance scoring and inference"
+          },
+          "objective": {
+            "zh": "补交叉编码/双编码的输入和复杂度、pair截断与batch推理；真实打分与候选上限对照。",
+            "en": "Inspect pair inputs, truncation, batching and cross-encoder scoring."
+          },
+          "evidence": {
+            "zh": "真实数据实验",
+            "en": "real TinyBERT inference"
+          },
+          "limitation": {
+            "zh": "42章真实TinyBERT成对输入、截断/batch/预算对照只用训练分区；29章另保留已见测试查询的诊断。",
+            "en": "Real TinyBERT pair inputs with truncation, batching and budget comparisons in 42 use the training partition. Chapter 29 also retains diagnostics on previously inspected test queries."
+          },
+          "chapters": [
+            42,
+            29
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "相关性第4讲：BERT推理",
+                "en": "Relevance, lecture 4: BERT inference"
+              },
+              "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/02_Rel_04.pdf"
+            },
+            {
+              "source_id": "S-BERT",
+              "locator": {
+                "zh": "第3节：BERT",
+                "en": "Section 3: BERT"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S13",
+          "title": {
+            "zh": "相关性模型训练",
+            "en": "Training relevance models"
+          },
+          "objective": {
+            "zh": "显式做小预算相关性模型训练/微调和冻结对照，按query切分与train-only负例策略；只报教学select，新run隔离，不替换正式服务。",
+            "en": "Fine-tune a small relevance model with separated fit and selection queries."
+          },
+          "evidence": {
+            "zh": "真实数据实验",
+            "en": "real TinyBERT fine-tuning"
+          },
+          "limitation": {
+            "zh": "32/8训练/选择query，128弱监督pair、2 epoch；无盲测或效果提升结论。",
+            "en": "32 fit / 8 selection queries, 128 weakly supervised pairs and 2 epochs; no blind-test or improvement claim."
+          },
+          "chapters": [
+            42
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "相关性第5讲：BERT训练",
+                "en": "Relevance, lecture 5: BERT training"
+              },
+              "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/02_Rel_05.pdf"
+            },
+            {
+              "source_id": "S-RERANK",
+              "locator": {
+                "zh": "成对输入与重排训练",
+                "en": "Pair inputs and reranker training"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S14",
+          "title": {
+            "zh": "排序目标与多路融合训练",
+            "en": "Ranking objectives and multi-channel fusion"
+          },
+          "objective": {
+            "zh": "补pointwise/pairwise/listwise区别、训练目标与排名指标不一致；至少一个可运行目标对照，弱负例边界写清。",
+            "en": "Compare pointwise, pairwise and listwise objectives and score fusion."
+          },
+          "evidence": {
+            "zh": "真实数据与构造机制",
+            "en": "constructed optimizer + existing real fusion"
+          },
+          "limitation": {
+            "zh": "构造分档三loss真优化；真实融合沿用29章弱负例。",
+            "en": "Actual optimization of three losses on constructed graded labels; real fusion retains the weak negatives of 29."
+          },
+          "chapters": [
+            43,
+            29
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "目录：排序 → 融合模型训练",
+                "en": "Syllabus: Ranking → training fusion models"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S15",
+          "title": {
+            "zh": "质量、多样性与业务约束",
+            "en": "Quality, diversity and constraints"
+          },
+          "objective": {
+            "zh": "在明确构造的查询候选上比较相关性与约束目标；讨论指标冲突、曝光偏差和线上实验边界，不声称商业增益。",
+            "en": "Separate relevance from quality and topic diversity under explicit constraints."
+          },
+          "evidence": {
+            "zh": "构造机制",
+            "en": "constructed multi-objective mechanism"
+          },
+          "limitation": {
+            "zh": "人工质量/主题与已知propensity机制；不推线上收益或真实IPS。",
+            "en": "Artificial quality/topics and known-propensity mechanisms; no online gain or real IPS result."
+          },
+          "chapters": [
+            44
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "基础第2讲：用户满意度；约束实验为Lab扩展",
+                "en": "Basics, lecture 2: satisfaction; constraint exercise is a Lab extension"
+              },
+              "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/01_Basics_02.pdf"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S16",
+          "title": {
+            "zh": "查询推荐与建议词",
+            "en": "Query recommendations and suggestions"
+          },
+          "objective": {
+            "zh": "按前缀建议、相关查询与会话需求分别定义任务，做候选生成/排序/离线评估；合成query日志需显著标识。",
+            "en": "Generate and rank suggestions from sessions; expose leakage and template overlap."
+          },
+          "evidence": {
+            "zh": "构造机制",
+            "en": "constructed sessions"
+          },
+          "limitation": {
+            "zh": "构造会话、模板重合显式披露；RR与前缀precision/recall仅机制。",
+            "en": "Constructed sessions with disclosed template overlap; reciprocal rank and prefix precision/recall illustrate mechanisms."
+          },
+          "chapters": [
+            45
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "目录：查询词推荐 → 场景、召回、排序",
+                "en": "Syllabus: suggestions → scenarios, retrieval and ranking"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S17",
+          "title": {
+            "zh": "服务链路、误差定位与性能",
+            "en": "Service traces, diagnosis and performance"
+          },
+          "objective": {
+            "zh": "补查询处理→多路召回→缓存→重排的可追溯链路、空结果和故障回退；新模块仍同一服务。",
+            "en": "Trace a request through candidates, scores, fallback and latency diagnosis."
+          },
+          "evidence": {
+            "zh": "真实数据与构造机制",
+            "en": "constructed trace + real API regression"
+          },
+          "limitation": {
+            "zh": "构造教学API独立标识；原真实API与性能诊断沿用30章。",
+            "en": "An explicitly constructed trace API; the original real-data API and performance diagnosis remain in 30."
+          },
+          "chapters": [
+            46,
+            30
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "基础第4讲：搜索链路",
+                "en": "Basics, lecture 4: search pipeline"
+              },
+              "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/01_Basics_04.pdf"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "S18",
+          "title": {
+            "zh": "综合复盘与课程导航",
+            "en": "Synthesis and course navigation"
+          },
+          "objective": {
+            "zh": "以S01–S17语义路径导航；17作为综合实验参考而非所有课程前置。每节标来源、先修、证据类型和覆盖状态。",
+            "en": "Explain an end-to-end search result and identify what the evidence cannot establish."
+          },
+          "evidence": {
+            "zh": "构造机制",
+            "en": "curriculum integration"
+          },
+          "limitation": {
+            "zh": "课程语义顺序与来源/先修/证据导航；工业规模和进阶选修不在核心验收。",
+            "en": "Semantic sequence, sources, prerequisites and evidence. Industrial scale and advanced extensions remain outside the core."
+          },
+          "chapters": [
+            46
+          ],
+          "references": [
+            {
+              "source_id": "S-WANG",
+              "locator": {
+                "zh": "六模块课程目录；综合复盘由Lab设计",
+                "en": "Six-module syllabus; synthesis designed by the Lab"
+              }
+            }
+          ],
+          "status": "core-covered"
+        }
+      ],
+      "lectures": [
+        {
+          "title": {
+            "zh": "搜索引擎的基本概念",
+            "en": "Search-engine basics"
+          },
+          "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/01_Basics_01.pdf",
+          "source_id": "S-WANG",
+          "locator": {
+            "zh": "01_Basics_01.pdf",
+            "en": "01_Basics_01.pdf"
+          },
+          "chapters": [
+            35
+          ],
+          "scope": {
+            "zh": "作者原版中文PDF；Lab正文为独立教学内容。",
+            "en": "Original Chinese author PDF; Lab teaching text is independently authored."
+          }
+        },
+        {
+          "title": {
+            "zh": "什么决定用户满意度",
+            "en": "What determines user satisfaction?"
+          },
+          "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/01_Basics_02.pdf",
+          "source_id": "S-WANG",
+          "locator": {
+            "zh": "01_Basics_02.pdf",
+            "en": "01_Basics_02.pdf"
+          },
+          "chapters": [
+            35,
+            44
+          ],
+          "scope": {
+            "zh": "作者原版中文PDF；Lab正文为独立教学内容。",
+            "en": "Original Chinese author PDF; Lab teaching text is independently authored."
+          }
+        },
+        {
+          "title": {
+            "zh": "搜索引擎的评价指标",
+            "en": "Search evaluation metrics"
+          },
+          "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/01_Basics_03.pdf",
+          "source_id": "S-WANG",
+          "locator": {
+            "zh": "01_Basics_03.pdf",
+            "en": "01_Basics_03.pdf"
+          },
+          "chapters": [
+            25,
+            35
+          ],
+          "scope": {
+            "zh": "作者原版中文PDF；Lab正文为独立教学内容。",
+            "en": "Original Chinese author PDF; Lab teaching text is independently authored."
+          }
+        },
+        {
+          "title": {
+            "zh": "搜索引擎的链路",
+            "en": "Search pipeline"
+          },
+          "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/01_Basics_04.pdf",
+          "source_id": "S-WANG",
+          "locator": {
+            "zh": "01_Basics_04.pdf",
+            "en": "01_Basics_04.pdf"
+          },
+          "chapters": [
+            46,
+            30
+          ],
+          "scope": {
+            "zh": "作者原版中文PDF；Lab正文为独立教学内容。",
+            "en": "Original Chinese author PDF; Lab teaching text is independently authored."
+          }
+        },
+        {
+          "title": {
+            "zh": "相关性的定义与分档",
+            "en": "Defining and grading relevance"
+          },
+          "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/02_Rel_01.pdf",
+          "source_id": "S-WANG",
+          "locator": {
+            "zh": "02_Rel_01.pdf",
+            "en": "02_Rel_01.pdf"
+          },
+          "chapters": [
+            35
+          ],
+          "scope": {
+            "zh": "作者原版中文PDF；Lab正文为独立教学内容。",
+            "en": "Original Chinese author PDF; Lab teaching text is independently authored."
+          }
+        },
+        {
+          "title": {
+            "zh": "相关性的评价指标",
+            "en": "Relevance evaluation"
+          },
+          "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/02_Rel_02.pdf",
+          "source_id": "S-WANG",
+          "locator": {
+            "zh": "02_Rel_02.pdf",
+            "en": "02_Rel_02.pdf"
+          },
+          "chapters": [
+            25,
+            35
+          ],
+          "scope": {
+            "zh": "作者原版中文PDF；Lab正文为独立教学内容。",
+            "en": "Original Chinese author PDF; Lab teaching text is independently authored."
+          }
+        },
+        {
+          "title": {
+            "zh": "文本匹配分数",
+            "en": "Text matching scores"
+          },
+          "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/02_Rel_03.pdf",
+          "source_id": "S-WANG",
+          "locator": {
+            "zh": "02_Rel_03.pdf",
+            "en": "02_Rel_03.pdf"
+          },
+          "chapters": [
+            37,
+            26
+          ],
+          "scope": {
+            "zh": "作者原版中文PDF；Lab正文为独立教学内容。",
+            "en": "Original Chinese author PDF; Lab teaching text is independently authored."
+          }
+        },
+        {
+          "title": {
+            "zh": "相关性BERT模型及其推理",
+            "en": "BERT relevance inference"
+          },
+          "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/02_Rel_04.pdf",
+          "source_id": "S-WANG",
+          "locator": {
+            "zh": "02_Rel_04.pdf",
+            "en": "02_Rel_04.pdf"
+          },
+          "chapters": [
+            42,
+            29
+          ],
+          "scope": {
+            "zh": "作者原版中文PDF；Lab正文为独立教学内容。",
+            "en": "Original Chinese author PDF; Lab teaching text is independently authored."
+          }
+        },
+        {
+          "title": {
+            "zh": "相关性BERT模型的训练",
+            "en": "Training BERT relevance models"
+          },
+          "url": "https://github.com/wangshusen/SearchEngine/blob/7339c6b126e314abdb74a89adb033d39d8e3d37b/Slides/02_Rel_05.pdf",
+          "source_id": "S-WANG",
+          "locator": {
+            "zh": "02_Rel_05.pdf",
+            "en": "02_Rel_05.pdf"
+          },
+          "chapters": [
+            42
+          ],
+          "scope": {
+            "zh": "作者原版中文PDF；Lab正文为独立教学内容。",
+            "en": "Original Chinese author PDF; Lab teaching text is independently authored."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ads",
+      "title": {
+        "zh": "广告",
+        "en": "Advertising"
+      },
+      "description": {
+        "zh": "先理解产品和市场，再研究响应预测、分配、竞价与反馈。",
+        "en": "Begin with products and markets, then response prediction, allocation, bidding and feedback."
+      },
+      "prerequisites": {
+        "zh": "先修31–34；无需先懂拍卖或点击率模型。",
+        "en": "Start with 31–34; prior auction or CTR-model knowledge is not assumed."
+      },
+      "phases": [
+        {
+          "title": {
+            "zh": "产品与市场 · A01–A06",
+            "en": "Products and markets · A01–A06"
+          },
+          "description": {
+            "zh": "先讲参与方、产品、计费、合约、搜索广告、多广告位拍卖和RTB。",
+            "en": "Participants, products, billing, contracts, sponsored search, multi-slot auctions and RTB."
+          },
+          "chapters": [
+            47,
+            48,
+            49,
+            50,
+            51,
+            52
+          ]
+        },
+        {
+          "title": {
+            "zh": "资格与候选 · A07–A08",
+            "en": "Eligibility and candidates · A07–A08"
+          },
+          "description": {
+            "zh": "上下文、扩量、资格与倒排候选；构造机制。",
+            "en": "Context, audience expansion, eligibility and inverted candidates through constructed mechanisms."
+          },
+          "chapters": [
+            53,
+            54
+          ]
+        },
+        {
+          "title": {
+            "zh": "响应预测 · A09–A12",
+            "en": "Response prediction · A09–A12"
+          },
+          "description": {
+            "zh": "真实曝光与线性基线 → 非线性FM对照 → 构造转化延迟 → 校准审计。",
+            "en": "Real impressions and a linear baseline → nonlinear FM comparison → constructed conversion delays → calibration audit."
+          },
+          "chapters": [
+            19,
+            20,
+            21,
+            55,
+            56,
+            22
+          ]
+        },
+        {
+          "title": {
+            "zh": "投放与反馈 · A13–A18",
+            "en": "Delivery and feedback · A13–A18"
+          },
+          "description": {
+            "zh": "价值出价、反馈pacing、归因增量、底价、实验与账本。",
+            "en": "Value bidding, feedback pacing, attribution and incrementality, reserve prices, experiment integrity and ledgers."
+          },
+          "chapters": [
+            57,
+            58,
+            59,
+            60,
+            61,
+            62
+          ]
+        },
+        {
+          "title": {
+            "zh": "旧综合与决策参考",
+            "en": "Reference · integrated experiments"
+          },
+          "description": {
+            "zh": "原实验保持原样，作为对照参考，不限制课程全貌。",
+            "en": "Original prediction and decision experiments remain as references; the learning sequence starts from the domain."
+          },
+          "chapters": [
+            18,
+            23,
+            24
+          ]
+        }
+      ],
+      "source_ids": [
+        "A-LIU",
+        "A-CCR",
+        "A-NJU",
+        "A-RTB",
+        "A-PAPERS"
+      ],
+      "units": [
+        {
+          "id": "A01",
+          "title": {
+            "zh": "广告参与方、产品与交易全貌",
+            "en": "Participants, products and market structure"
+          },
+          "objective": {
+            "zh": "以广告主/媒体/用户/平台解释合约、竞价、搜索、原生、程序化产品；贯通一次请求和结算，先讲目标再讲模型。",
+            "en": "Trace an impression through advertiser, publisher, exchange and user roles."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "产品与角色的构造链路；非完整协议或品牌效果评估。",
+            "en": "A constructed product/role pipeline, not a complete protocol or brand-effect evaluation."
+          },
+          "chapters": [
+            47
+          ],
+          "references": [
+            {
+              "source_id": "A-CCR",
+              "locator": {
+                "zh": "幻灯片3–5、14–41：产品与目标",
+                "en": "Slides 3–5 and 14–41: products and objectives"
+              }
+            },
+            {
+              "source_id": "A-LIU",
+              "locator": {
+                "zh": "公开目录：产品与商业模式",
+                "en": "Public contents: products and business models"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A02",
+          "title": {
+            "zh": "计费单位、指标与三方目标",
+            "en": "Billing units, metrics and stakeholder objectives"
+          },
+          "objective": {
+            "zh": "补CPM/CPC/CPA、CTR/CVR/CTCVR、eCPM/ROAS单位换算和分母；用可检查账本避免把出价、支付、收入、利润混为一谈。",
+            "en": "Convert CPM/CPC/CPA units and reconcile spend, value and stakeholder objectives."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "无手续费的构造账本；收入减广告费未计其他成本，不是净利润。",
+            "en": "A constructed ledger without fees; revenue minus ad spend omits other costs and is not net profit."
+          },
+          "chapters": [
+            48
+          ],
+          "references": [
+            {
+              "source_id": "A-CCR",
+              "locator": {
+                "zh": "幻灯片14–41：目标与价值",
+                "en": "Slides 14–41: objectives and value"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A03",
+          "title": {
+            "zh": "合约广告、库存预测与在线分配",
+            "en": "Contracts, inventory forecasting and online allocation"
+          },
+          "objective": {
+            "zh": "构造库存与合约，做离线最优小规模枚举/LP与在线贪心对照，检查保量、欠投和机会成本；不用虚构真实订单。",
+            "en": "Compare offline allocation with online decisions when future inventory is uncertain."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "3份库存的穷举与在线贪心、历史均值预测；不是工业库存模型或在线最优保证。",
+            "en": "Three inventory units, exhaustive allocation versus online greedy, and a historical-mean forecast; not industrial forecasting or an optimality guarantee."
+          },
+          "chapters": [
+            49
+          ],
+          "references": [
+            {
+              "source_id": "A-LIU",
+              "locator": {
+                "zh": "公开目录：合约广告；库存机制由Lab展开",
+                "en": "Public contents: contract advertising; inventory mechanism by the Lab"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A04",
+          "title": {
+            "zh": "搜索广告、定向资格与质量排序",
+            "en": "Sponsored search, eligibility and quality ranking"
+          },
+          "objective": {
+            "zh": "讲关键词/广告/落地页匹配、资格过滤与质量分；同请求中区分自然结果与商业候选，缺质量日志用机制例。",
+            "en": "Apply eligibility before quality-aware ranking and diagnose why an ad is excluded."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "关键词OR与规则资格、人工质量；无真实关键词/落地页质量日志。",
+            "en": "Keyword OR matching, rule-based eligibility and artificial quality; no real keyword or landing-page quality logs."
+          },
+          "chapters": [
+            50
+          ],
+          "references": [
+            {
+              "source_id": "A-NJU",
+              "locator": {
+                "zh": "课程表：搜索广告与匹配",
+                "en": "Syllabus: sponsored search and matching"
+              }
+            },
+            {
+              "source_id": "A-CCR",
+              "locator": {
+                "zh": "幻灯片42–94：匹配与拍卖",
+                "en": "Slides 42–94: matching and auctions"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A05",
+          "title": {
+            "zh": "GFP/GSP/VCG与多广告位拍卖",
+            "en": "GFP / GSP / VCG and multi-slot auctions"
+          },
+          "objective": {
+            "zh": "增加位置外部性、多广告位GSP/VCG支付与效用可枚举验算；不把现单物品二价叫GSP/VCG，不承诺真实最优。",
+            "en": "Calculate allocations, prices and utilities under explicit auction assumptions."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "同质质量、可分离位置CTR、无预算；VCG数值核验不替代理论假设。",
+            "en": "Homogeneous quality, separable position CTR and no budgets; numerical VCG checks depend on these assumptions."
+          },
+          "chapters": [
+            51
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第21–36页：拍卖",
+                "en": "PDF pages 21–36: auctions"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=21"
+            },
+            {
+              "source_id": "A-CCR",
+              "locator": {
+                "zh": "幻灯片42–94：博弈、匹配与拍卖",
+                "en": "Slides 42–94: games, matching and auctions"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A06",
+          "title": {
+            "zh": "程序化RTB、底价与市场反馈",
+            "en": "Programmatic RTB, reserves and market feedback"
+          },
+          "objective": {
+            "zh": "串联DSP/SSP/ADX的请求和反馈；区分底价、竞价对手、支付、输标和截尾市场价；把制度设定写入实验配置。",
+            "en": "Trace bids, wins, reserves and feedback through a minimal exchange."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "最小角色/反馈状态；不实现OpenRTB，未达底价与竞争输标分别处理。",
+            "en": "Minimal role/feedback states, not OpenRTB. Below-reserve losses and competitive losses are distinguished."
+          },
+          "chapters": [
+            52
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第18–19、38页：系统",
+                "en": "PDF pages 18–19 and 38: systems"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=18"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A07",
+          "title": {
+            "zh": "受众定向、上下文、扩量与DMP",
+            "en": "Audience targeting, context, expansion and DMPs"
+          },
+          "objective": {
+            "zh": "以构造人群/上下文做约束匹配与扩量、覆盖和误投；解释冷启动、数据最小化与跨域限制，不能把匿名编码解释为真实属性。",
+            "en": "Separate context from identity and inspect audience expansion errors."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "人工上下文及相关标签；无真实画像、DMP跨域或扩量效果。",
+            "en": "Artificial contexts and artificial relevance labels; no real profiles, cross-domain DMP or measured expansion gain."
+          },
+          "chapters": [
+            53
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第133–148页：定向与扩量",
+                "en": "PDF pages 133–148: targeting and expansion"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=133"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A08",
+          "title": {
+            "zh": "广告候选检索与约束匹配",
+            "en": "Ad candidate retrieval and constraints"
+          },
+          "objective": {
+            "zh": "建小广告库存与AND/OR约束索引、候选top-k；向量检索可复用共享组件，但必须检验资格约束，不能借文档搜索冒充广告引擎。",
+            "en": "Compare constrained inverted candidates with an exhaustive oracle."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "小广告库倒排与穷举oracle；无分布式服务与并发预算一致性。",
+            "en": "A tiny inventory, inverted candidates and exhaustive oracle; no distributed serving or concurrent budget consistency."
+          },
+          "chapters": [
+            54
+          ],
+          "references": [
+            {
+              "source_id": "A-LIU",
+              "locator": {
+                "zh": "公开目录：广告检索；小索引为Lab教学实现",
+                "en": "Public contents: ad retrieval; small index implemented by the Lab"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A09",
+          "title": {
+            "zh": "真实曝光、标签、切分与线性CTR",
+            "en": "Real impressions, splits and linear CTR"
+          },
+          "objective": {
+            "zh": "复用，不重新训练200k正式实验；把抽样、训练先验和未知字段语义放进数据契约。",
+            "en": "Inspect labels, leakage boundaries and the contribution of sparse features."
+          },
+          "evidence": {
+            "zh": "真实采样曝光实验",
+            "en": "Real sampled CTR data"
+          },
+          "limitation": {
+            "zh": "真实抽样曝光、匿名字段、特征组分区；不是用户/时间切分或总体CTR。",
+            "en": "Real sampled impressions, anonymous fields and feature-group partitioning; not a user/time split or population CTR estimate."
+          },
+          "chapters": [
+            19,
+            20
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第39–69页：响应预测",
+                "en": "PDF pages 39–69: response prediction"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=39"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A10",
+          "title": {
+            "zh": "特征交叉与非线性响应模型",
+            "en": "Feature interactions and nonlinear response models"
+          },
+          "objective": {
+            "zh": "复用推荐06机制代码而非复制；选少量有代表性的交叉/embedding对照进行实际小预算拟合，单变量与参数预算清楚，不堆论文名字。",
+            "en": "Train FM and a linear control on the same real sample, retaining overfitting results."
+          },
+          "evidence": {
+            "zh": "真实采样曝光实验",
+            "en": "Real sampled CTR data"
+          },
+          "limitation": {
+            "zh": "10k真实曝光、类别字段、单种子8epoch；select开发诊断，FM过拟合负结果保留。",
+            "en": "10k real impressions, categorical fields, one seed and eight epochs. Selection-only development diagnostics preserve FM overfitting."
+          },
+          "chapters": [
+            55
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第58页：FM",
+                "en": "PDF page 58: factorization machines"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=58"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A11",
+          "title": {
+            "zh": "转化预估、延迟反馈与样本选择",
+            "en": "Conversions, delayed feedback and selection"
+          },
+          "objective": {
+            "zh": "讲CTR×CVR与CTCVR、延迟删失与选择偏差；要么找许可清楚的小真实转换数据，要么明确构造日志做机制，绝不从click捏造conversion。",
+            "en": "Explain observation windows, delayed labels and conversion selection bias."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "明确构造转化与延迟，不从Criteo click制造真实conversion；无真实CVR/ESMM收益。",
+            "en": "Explicitly constructed conversions and delays; Criteo clicks are not relabeled as real conversions. No real CVR/ESMM gain."
+          },
+          "chapters": [
+            56
+          ],
+          "references": [
+            {
+              "source_id": "A-LIU",
+              "locator": {
+                "zh": "公开目录：点击率与转化率；延迟实验由Lab展开",
+                "en": "Public contents: CTR/CVR; delayed-feedback exercise by the Lab"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A12",
+          "title": {
+            "zh": "概率校准、评分与分段审计",
+            "en": "Calibration, proper scores and segment audits"
+          },
+          "objective": {
+            "zh": "保留负结果和计数，说明calibration/audit独立性与抽样先验限制；不把ECE最小当唯一选型。",
+            "en": "Use separate calibration/audit partitions and compare proper scores and reliability."
+          },
+          "evidence": {
+            "zh": "真实采样曝光实验",
+            "en": "Real sampled CTR data"
+          },
+          "limitation": {
+            "zh": "原独立calibration/audit与负结果保持；未知抽样先验，不推断线上校准。",
+            "en": "Original separate calibration/audit and negative results retained. Unknown sampling priors prevent claims about online calibration."
+          },
+          "chapters": [
+            22
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第39–69页：响应预测；校准审计为Lab展开",
+                "en": "PDF pages 39–69: response prediction; calibration audit by the Lab"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=39"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A13",
+          "title": {
+            "zh": "出价目标、竞价函数与智能投放",
+            "en": "Bid objectives, bidding functions and value optimization"
+          },
+          "objective": {
+            "zh": "从CPC/CPA/ROAS目标推导报价、约束和最优反应的依赖假设；至少固定市场比较价值报价与约束策略，不承诺实投利润。",
+            "en": "Distinguish expected value, budget feasibility and ROAS constraints."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "固定构造二价市场与已知期望转化价值；硬预算与ROAS阈值非全局最优。",
+            "en": "A fixed constructed second-price market with known expected conversion values. Hard budgets and ROAS thresholds are not globally optimal."
+          },
+          "chapters": [
+            57
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第71–91页：出价优化",
+                "en": "PDF pages 71–91: bidding optimization"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=71"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A14",
+          "title": {
+            "zh": "预算pacing与反馈控制",
+            "en": "Budget pacing and feedback control"
+          },
+          "objective": {
+            "zh": "先讲现门控，再加入反馈型节奏控制并比较突发、稀疏、漂移；逐请求断言花费不超预算，区分匀速花费与价值最大化。",
+            "en": "Compare pacing responses under fixed market conditions and changing demand."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "积分式误差反馈，不是完整PID；3情景价值/花费有取舍，不保证花完或最优。",
+            "en": "Integral error feedback, not a complete PID controller. Three scenarios expose value/spend tradeoffs, not guaranteed optimal spend."
+          },
+          "chapters": [
+            58
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第118–131页：预算pacing",
+                "en": "PDF pages 118–131: budget pacing"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=118"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A15",
+          "title": {
+            "zh": "归因与增量效果",
+            "en": "Attribution and incrementality"
+          },
+          "objective": {
+            "zh": "构造多触点路径比last-click等记账；另用带已知随机分配的机制实验说明增量。没有propensity不能声称真实IPS/OPE或因果增收。",
+            "en": "Separate multi-touch bookkeeping from causal incrementality."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "构造路径与已知随机化；无真实归因真值、propensity或IPS/OPE。",
+            "en": "Constructed paths and known random assignment; no real attribution ground truth, propensities or IPS/OPE result."
+          },
+          "chapters": [
+            59
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第94–116页：归因",
+                "en": "PDF pages 94–116: attribution"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=94"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A16",
+          "title": {
+            "zh": "底价优化与供需策略",
+            "en": "Reserve prices and supply–demand strategies"
+          },
+          "objective": {
+            "zh": "在相同构造报价分布下扫底价，计算填充、收入和广告主效用；明确分布/拍卖机制，不依据模拟选择真实价格。",
+            "en": "Compare fill, revenue and utility under an explicit bid distribution."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "固定U(0,2)报价、统一二价reserve；忽略长期战略响应，不选择真实底价。",
+            "en": "Fixed U(0,2) bids and a common second-price reserve. Strategic long-term responses are omitted; no real reserve recommendation."
+          },
+          "chapters": [
+            60
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第150–163页：底价",
+                "en": "PDF pages 150–163: reserve prices"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=150"
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A17",
+          "title": {
+            "zh": "实验、偏差、反作弊与数据边界",
+            "en": "Experiments, bias, fraud and data boundaries"
+          },
+          "objective": {
+            "zh": "通过机制例说明曝光选择、分桶干扰、异常流量与数据滥用；不可由特征哈希切分推断用户级独立或公平性；保留负结果。",
+            "en": "Expose interference, selection bias and false positives before interpreting a metric."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "构造混合偏差、预算干扰和规则误伤；非真实反作弊准确率/线上实验。",
+            "en": "Constructed mixture bias, budget interference and false positives; not real fraud accuracy or an online experiment."
+          },
+          "chapters": [
+            61
+          ],
+          "references": [
+            {
+              "source_id": "A-LIU",
+              "locator": {
+                "zh": "公开目录：相关技术；偏差/干扰实验为Lab展开",
+                "en": "Public contents: related technology; bias/interference exercise by the Lab"
+              }
+            }
+          ],
+          "status": "core-covered"
+        },
+        {
+          "id": "A18",
+          "title": {
+            "zh": "端到端账本与课程综合",
+            "en": "End-to-end ledger and synthesis"
+          },
+          "objective": {
+            "zh": "用同一Lab中的可追溯小请求演示完整结构，始终将真实CTR证据和模拟决策证据分层；课程先产品/市场，再预测/优化，不从Criteo实验倒推主线。",
+            "en": "Reconcile eligibility, decision, feedback and billing with idempotent events."
+          },
+          "evidence": {
+            "zh": "构造机制 / 模拟市场",
+            "en": "Constructed mechanism / simulated market"
+          },
+          "limitation": {
+            "zh": "单请求与单进程幂等机制；无并发事务、退款、真实点击或真实收入。",
+            "en": "A single-request, single-process idempotency mechanism; no concurrent transactions, refunds, real clicks or revenue."
+          },
+          "chapters": [
+            62
+          ],
+          "references": [
+            {
+              "source_id": "A-RTB",
+              "locator": {
+                "zh": "PDF第18–19页：系统背景；账本由Lab设计",
+                "en": "PDF pages 18–19: systems background; ledger designed by the Lab"
+              },
+              "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf#page=18"
+            }
+          ],
+          "status": "core-covered"
+        }
+      ],
+      "lectures": [
+        {
+          "title": {
+            "zh": "计算传播学导论 · 第8章计算广告",
+            "en": "Introduction to Computational Communication · Chapter 8"
+          },
+          "url": "https://github.com/SocratesClub/ccrbook/blob/6dbd5650f2adc6e257e5bd5d156bc50a72560ee9/slides/Chapter%208%20%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A.pptx",
+          "source_id": "A-CCR",
+          "locator": {
+            "zh": "96页PPT：产品14–41；市场机制42–94",
+            "en": "96 slides: products 14–41; market mechanisms 42–94"
+          },
+          "chapters": [
+            47,
+            48,
+            50,
+            51
+          ],
+          "scope": {
+            "zh": "GitHub固定版本96页单章PPT：产品、目标、博弈、匹配、拍卖。不是完整广告工程课。",
+            "en": "A pinned 96-slide Chinese chapter on products, objectives, games, matching and auctions. Not a complete advertising engineering course."
+          }
+        },
+        {
+          "title": {
+            "zh": "张伟楠 / 徐健 · CIKM 2016 RTB教程",
+            "en": "Weinan Zhang / Jian Xu · CIKM 2016 RTB Tutorial"
+          },
+          "url": "https://wnzhang.net/slides/cikm-16-rtb-full.pdf",
+          "source_id": "A-RTB",
+          "locator": {
+            "zh": "164页PDF：各单元入口定位到页",
+            "en": "164-page PDF: unit links open the relevant page"
+          },
+          "chapters": [
+            52,
+            53,
+            55,
+            57,
+            58,
+            59,
+            60
+          ],
+          "scope": {
+            "zh": "164页原作者讲义：响应预测、竞价、归因、pacing、定向、底价。Lab机制自编，非完整论文配方复现。",
+            "en": "164 author slides covering response prediction, bidding, attribution, pacing, targeting and reserve prices. Lab mechanisms are independently authored, not full paper replications."
+          }
+        }
+      ]
+    },
+    {
+      "id": "recommendation",
+      "title": {
+        "zh": "推荐",
+        "en": "Recommendation"
+      },
+      "description": {
+        "zh": "从用户行为出发，学习候选召回、序列、特征交叉、排序与评估。",
+        "en": "Start from user behavior and study retrieval, sequences, interactions, ranking and evaluation."
+      },
+      "prerequisites": {
+        "zh": "先修31–34；真实实验需准备Retailrocket，XMRec为进阶。",
+        "en": "Start with 31–34. Real-data experiments require Retailrocket; XMRec is an advanced track."
+      },
+      "phases": [
+        {
+          "title": {
+            "zh": "入门 · 数据、基线与训练",
+            "en": "Start · data, baselines and training"
+          },
+          "description": {
+            "zh": "以真实推荐日志为例认识数据、双塔、梯度与评估；这是推荐入门，并非独立的公用基础课。",
+            "en": "Real interaction logs, two-tower retrieval, gradients and evaluation. These are recommendation-specific examples."
+          },
+          "chapters": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "title": {
+            "zh": "机制 · 逐个理解算法",
+            "en": "Mechanisms · one algorithm at a time"
+          },
+          "description": {
+            "zh": "召回 → 多目标 → 特征交叉 → 序列 → 多样性 → 冷启动 → 工程。构造张量和模拟流量均按章节标识。",
+            "en": "Retrieval → multiple objectives → feature interactions → sequences → diversity → cold start → engineering. Constructed tensors and simulated traffic are labeled."
+          },
+          "chapters": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "title": {
+            "zh": "实践 · XMRec 竞赛核心",
+            "en": "Practice · XMRec competition core"
+          },
+          "description": {
+            "zh": "题目与数据 → 特征 → 图模型 → 排序 → 评估；非完整冠军集成。",
+            "en": "Task and data → features → graph models → ranking → evaluation. A teaching implementation of selected methods, not the full winning ensemble."
+          },
+          "chapters": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "title": {
+            "zh": "综合 · 推荐对照实验",
+            "en": "Synthesis · controlled comparisons"
+          },
+          "description": {
+            "zh": "把负采样、序列和索引放回同预算对照，保留负结果。",
+            "en": "Compare negative sampling, sequence models and indexing under a common budget. Preserve negative results."
+          },
+          "chapters": [
+            16
+          ]
+        },
+        {
+          "title": {
+            "zh": "参考 · 旧版推荐课程导览",
+            "en": "Reference · original recommendation map"
+          },
+          "description": {
+            "zh": "原00章只覆盖推荐课程，保留原内容；三领域导航以当前网页为准。",
+            "en": "Chapter 00 describes the recommendation course. Use this website for the current cross-domain map."
+          },
+          "chapters": [
+            0
+          ]
+        }
+      ],
+      "source_ids": [
+        "R-WANG",
+        "R-XMREC",
+        "R-OPDAI"
+      ],
+      "units": [
+        {
+          "id": "R01",
+          "title": {
+            "zh": "行为数据与基线",
+            "en": "Behavioral data and baselines"
+          },
+          "objective": {
+            "zh": "运行对应章节，解释输入、输出、对照与可识别边界。",
+            "en": "Run the linked chapters and explain inputs, outputs, controls and the limits of the evidence."
+          },
+          "evidence": {
+            "zh": "真实数据与机制练习，逐章标注",
+            "en": "Real data and mechanism exercises, labeled per chapter"
+          },
+          "limitation": {
+            "zh": "真实日志；点击、曝光与未观察偏好不可混同。",
+            "en": "Real interaction logs; clicks, impressions and unobserved preferences are not interchangeable."
+          },
+          "chapters": [
+            1,
+            3
+          ],
+          "references": [
+            {
+              "source_id": "R-WANG",
+              "locator": {
+                "zh": "作者课程对应模块；见下方逐份讲义",
+                "en": "Corresponding author-course module; see individual lecture links below"
+              }
+            }
+          ],
+          "status": "bounded-practice"
+        },
+        {
+          "id": "R02",
+          "title": {
+            "zh": "召回与表示学习",
+            "en": "Retrieval and representation learning"
+          },
+          "objective": {
+            "zh": "运行对应章节，解释输入、输出、对照与可识别边界。",
+            "en": "Run the linked chapters and explain inputs, outputs, controls and the limits of the evidence."
+          },
+          "evidence": {
+            "zh": "真实数据与机制练习，逐章标注",
+            "en": "Real data and mechanism exercises, labeled per chapter"
+          },
+          "limitation": {
+            "zh": "真实双塔与构造召回机制；自监督和Deep Retrieval不等于完整复现。",
+            "en": "Real two-tower training plus constructed retrieval mechanisms; self-supervision and Deep Retrieval are not fully reproduced."
+          },
+          "chapters": [
+            2,
+            4
+          ],
+          "references": [
+            {
+              "source_id": "R-WANG",
+              "locator": {
+                "zh": "作者课程对应模块；见下方逐份讲义",
+                "en": "Corresponding author-course module; see individual lecture links below"
+              }
+            }
+          ],
+          "status": "bounded-practice"
+        },
+        {
+          "id": "R03",
+          "title": {
+            "zh": "排序、多目标与交叉",
+            "en": "Ranking, multiple objectives and interactions"
+          },
+          "objective": {
+            "zh": "运行对应章节，解释输入、输出、对照与可识别边界。",
+            "en": "Run the linked chapters and explain inputs, outputs, controls and the limits of the evidence."
+          },
+          "evidence": {
+            "zh": "构造目标 / 张量机制",
+            "en": "Constructed objectives / tensor mechanisms"
+          },
+          "limitation": {
+            "zh": "构造张量/模拟任务；不声称真实曝光CTR或完整MMoE生产效果。",
+            "en": "Constructed tensors and simulated tasks; no claim of real impression CTR or production MMoE results."
+          },
+          "chapters": [
+            5,
+            6
+          ],
+          "references": [
+            {
+              "source_id": "R-WANG",
+              "locator": {
+                "zh": "作者课程对应模块；见下方逐份讲义",
+                "en": "Corresponding author-course module; see individual lecture links below"
+              }
+            }
+          ],
+          "status": "bounded-practice"
+        },
+        {
+          "id": "R04",
+          "title": {
+            "zh": "序列兴趣",
+            "en": "Sequence interests"
+          },
+          "objective": {
+            "zh": "运行对应章节，解释输入、输出、对照与可识别边界。",
+            "en": "Run the linked chapters and explain inputs, outputs, controls and the limits of the evidence."
+          },
+          "evidence": {
+            "zh": "真实数据与机制练习，逐章标注",
+            "en": "Real data and mechanism exercises, labeled per chapter"
+          },
+          "limitation": {
+            "zh": "候选相关注意力与长序列机制；不是完整DIN/SIM论文配方。",
+            "en": "Candidate-dependent attention and long-sequence mechanisms, not complete DIN/SIM recipes."
+          },
+          "chapters": [
+            7
+          ],
+          "references": [
+            {
+              "source_id": "R-WANG",
+              "locator": {
+                "zh": "作者课程对应模块；见下方逐份讲义",
+                "en": "Corresponding author-course module; see individual lecture links below"
+              }
+            }
+          ],
+          "status": "bounded-practice"
+        },
+        {
+          "id": "R05",
+          "title": {
+            "zh": "多样性与重排",
+            "en": "Diversity and reranking"
+          },
+          "objective": {
+            "zh": "运行对应章节，解释输入、输出、对照与可识别边界。",
+            "en": "Run the linked chapters and explain inputs, outputs, controls and the limits of the evidence."
+          },
+          "evidence": {
+            "zh": "真实数据与机制练习，逐章标注",
+            "en": "Real data and mechanism exercises, labeled per chapter"
+          },
+          "limitation": {
+            "zh": "小全集与真实向量机制；无线上多样性收益结论。",
+            "en": "Small-set and real-vector mechanisms, with no claim of online diversity gains."
+          },
+          "chapters": [
+            8
+          ],
+          "references": [
+            {
+              "source_id": "R-WANG",
+              "locator": {
+                "zh": "作者课程对应模块；见下方逐份讲义",
+                "en": "Corresponding author-course module; see individual lecture links below"
+              }
+            }
+          ],
+          "status": "bounded-practice"
+        },
+        {
+          "id": "R06",
+          "title": {
+            "zh": "冷启动与工程",
+            "en": "Cold start and engineering"
+          },
+          "objective": {
+            "zh": "运行对应章节，解释输入、输出、对照与可识别边界。",
+            "en": "Run the linked chapters and explain inputs, outputs, controls and the limits of the evidence."
+          },
+          "evidence": {
+            "zh": "真实数据与机制练习，逐章标注",
+            "en": "Real data and mechanism exercises, labeled per chapter"
+          },
+          "limitation": {
+            "zh": "受控流量与诊断，真实新物品/人群效果需要额外数据。",
+            "en": "Controlled traffic and diagnostics; real new-item/segment outcomes require additional data."
+          },
+          "chapters": [
+            9,
+            10
+          ],
+          "references": [
+            {
+              "source_id": "R-WANG",
+              "locator": {
+                "zh": "作者课程对应模块；见下方逐份讲义",
+                "en": "Corresponding author-course module; see individual lecture links below"
+              }
+            }
+          ],
+          "status": "bounded-practice"
+        },
+        {
+          "id": "R07",
+          "title": {
+            "zh": "XMRec实践",
+            "en": "XMRec practice"
+          },
+          "objective": {
+            "zh": "运行对应章节，解释输入、输出、对照与可识别边界。",
+            "en": "Run the linked chapters and explain inputs, outputs, controls and the limits of the evidence."
+          },
+          "evidence": {
+            "zh": "真实数据与机制练习，逐章标注",
+            "en": "Real data and mechanism exercises, labeled per chapter"
+          },
+          "limitation": {
+            "zh": "公开本地切分与冠军核心方法，非完整冠军集成或隐藏榜单分数。",
+            "en": "Public local splits and selected winning methods, not the full ensemble or hidden leaderboard scores."
+          },
+          "chapters": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "references": [
+            {
+              "source_id": "R-XMREC",
+              "locator": {
+                "zh": "官方任务、数据与评估协议",
+                "en": "Official task, data and evaluation protocol"
+              }
+            },
+            {
+              "source_id": "R-OPDAI",
+              "locator": {
+                "zh": "作者方案核心方法",
+                "en": "Core methods from the authors’ solution"
+              }
+            }
+          ],
+          "status": "bounded-practice"
+        },
+        {
+          "id": "R08",
+          "title": {
+            "zh": "受控实验与复盘",
+            "en": "Controlled experiments and synthesis"
+          },
+          "objective": {
+            "zh": "运行对应章节，解释输入、输出、对照与可识别边界。",
+            "en": "Run the linked chapters and explain inputs, outputs, controls and the limits of the evidence."
+          },
+          "evidence": {
+            "zh": "真实数据与机制练习，逐章标注",
+            "en": "Real data and mechanism exercises, labeled per chapter"
+          },
+          "limitation": {
+            "zh": "真实样本多组对照，预算与负结果保留；非工业规模。",
+            "en": "Controlled comparisons on real samples, retaining budgets and negative results; not industrial scale."
+          },
+          "chapters": [
+            16
+          ],
+          "references": [
+            {
+              "source_id": "R-WANG",
+              "locator": {
+                "zh": "作者课程对应模块；见下方逐份讲义",
+                "en": "Corresponding author-course module; see individual lecture links below"
+              }
+            }
+          ],
+          "status": "bounded-practice"
+        }
+      ],
+      "lectures": [
+        {
+          "title": {
+            "zh": "推荐系统基本概念",
+            "en": "Recommender-system basics"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/01_Basics_01.pdf",
+          "file": "01_Basics_01.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "01_Basics_01.pdf · 10页",
+            "en": "01_Basics_01.pdf · 10 pages"
+          },
+          "chapters": [
+            3
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "推荐系统链路",
+            "en": "Recommendation pipeline"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/01_Basics_02.pdf",
+          "file": "01_Basics_02.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "01_Basics_02.pdf · 15页",
+            "en": "01_Basics_02.pdf · 15 pages"
+          },
+          "chapters": [
+            3
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "A/B 测试",
+            "en": "A/B testing"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/01_Basics_03.pdf",
+          "file": "01_Basics_03.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "01_Basics_03.pdf · 23页",
+            "en": "01_Basics_03.pdf · 23 pages"
+          },
+          "chapters": [
+            3
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "ItemCF",
+            "en": "Item-based collaborative filtering"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_01.pdf",
+          "file": "02_Retrieval_01.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_01.pdf · 39页",
+            "en": "02_Retrieval_01.pdf · 39 pages"
+          },
+          "chapters": [
+            1
+          ],
+          "scope": {
+            "zh": "已有对应方法实验；不代表完整论文或工业效果。",
+            "en": "A corresponding method experiment is available; this does not establish complete paper reproduction or industrial outcomes."
+          }
+        },
+        {
+          "title": {
+            "zh": "Swing",
+            "en": "Swing"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_02.pdf",
+          "file": "02_Retrieval_02.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_02.pdf · 12页",
+            "en": "02_Retrieval_02.pdf · 12 pages"
+          },
+          "chapters": [
+            4
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "UserCF",
+            "en": "User-based collaborative filtering"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_03.pdf",
+          "file": "02_Retrieval_03.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_03.pdf · 37页",
+            "en": "02_Retrieval_03.pdf · 37 pages"
+          },
+          "chapters": [
+            4
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "离散特征处理",
+            "en": "Categorical features"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_04.pdf",
+          "file": "02_Retrieval_04.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_04.pdf · 17页",
+            "en": "02_Retrieval_04.pdf · 17 pages"
+          },
+          "chapters": [
+            2
+          ],
+          "scope": {
+            "zh": "已有对应方法实验；不代表完整论文或工业效果。",
+            "en": "A corresponding method experiment is available; this does not establish complete paper reproduction or industrial outcomes."
+          }
+        },
+        {
+          "title": {
+            "zh": "矩阵补充与 ANN",
+            "en": "Matrix completion and ANN"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_05.pdf",
+          "file": "02_Retrieval_05.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_05.pdf · 34页",
+            "en": "02_Retrieval_05.pdf · 34 pages"
+          },
+          "chapters": [
+            4
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "双塔模型：模型与训练",
+            "en": "Two towers: architecture and training"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_06.pdf",
+          "file": "02_Retrieval_06.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_06.pdf · 31页",
+            "en": "02_Retrieval_06.pdf · 31 pages"
+          },
+          "chapters": [
+            2
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "双塔模型：正负样本",
+            "en": "Two towers: positive and negative samples"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_07.pdf",
+          "file": "02_Retrieval_07.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_07.pdf · 22页",
+            "en": "02_Retrieval_07.pdf · 22 pages"
+          },
+          "chapters": [
+            4
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "双塔模型：服务与更新",
+            "en": "Two towers: serving and updates"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_08.pdf",
+          "file": "02_Retrieval_08.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_08.pdf · 21页",
+            "en": "02_Retrieval_08.pdf · 21 pages"
+          },
+          "chapters": [
+            4
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "双塔与自监督学习",
+            "en": "Two towers and self-supervised learning"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_09.pdf",
+          "file": "02_Retrieval_09.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_09.pdf · 38页",
+            "en": "02_Retrieval_09.pdf · 38 pages"
+          },
+          "chapters": [
+            4
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "Deep Retrieval",
+            "en": "Deep Retrieval"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_10.pdf",
+          "file": "02_Retrieval_10.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_10.pdf · 48页",
+            "en": "02_Retrieval_10.pdf · 48 pages"
+          },
+          "chapters": [
+            4
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "其他召回通道",
+            "en": "Other retrieval channels"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_11.pdf",
+          "file": "02_Retrieval_11.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_11.pdf · 16页",
+            "en": "02_Retrieval_11.pdf · 16 pages"
+          },
+          "chapters": [
+            10
+          ],
+          "scope": {
+            "zh": "机制可读；真实业务任务还需要额外数据与标签。",
+            "en": "A mechanism is readable; the real business task needs additional data and labels."
+          }
+        },
+        {
+          "title": {
+            "zh": "曝光过滤与 Bloom Filter",
+            "en": "Exposure filtering and Bloom filters"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/02_Retrieval_12.pdf",
+          "file": "02_Retrieval_12.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "02_Retrieval_12.pdf · 25页",
+            "en": "02_Retrieval_12.pdf · 25 pages"
+          },
+          "chapters": [
+            4
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "多目标排序与采样校准",
+            "en": "Multiple objectives and sampling calibration"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_01.pdf",
+          "file": "03_Rank_01.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "03_Rank_01.pdf · 18页",
+            "en": "03_Rank_01.pdf · 18 pages"
+          },
+          "chapters": [
+            5
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "MMoE",
+            "en": "Multi-gate Mixture-of-Experts"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_02.pdf",
+          "file": "03_Rank_02.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "03_Rank_02.pdf · 18页",
+            "en": "03_Rank_02.pdf · 18 pages"
+          },
+          "chapters": [
+            5
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "预估分数融合",
+            "en": "Prediction-score fusion"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_03.pdf",
+          "file": "03_Rank_03.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "03_Rank_03.pdf · 8页",
+            "en": "03_Rank_03.pdf · 8 pages"
+          },
+          "chapters": [
+            5
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "视频播放时长建模",
+            "en": "Video watch-time modeling"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_04.pdf",
+          "file": "03_Rank_04.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "03_Rank_04.pdf · 15页",
+            "en": "03_Rank_04.pdf · 15 pages"
+          },
+          "chapters": [
+            5
+          ],
+          "scope": {
+            "zh": "机制可读；真实业务任务还需要额外数据与标签。",
+            "en": "A mechanism is readable; the real business task needs additional data and labels."
+          }
+        },
+        {
+          "title": {
+            "zh": "排序特征与服务",
+            "en": "Ranking features and serving"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_05.pdf",
+          "file": "03_Rank_05.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "03_Rank_05.pdf · 14页",
+            "en": "03_Rank_05.pdf · 14 pages"
+          },
+          "chapters": [
+            1
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "粗排三塔与 COLD",
+            "en": "Three-tower coarse ranking and COLD"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/03_Rank_06.pdf",
+          "file": "03_Rank_06.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "03_Rank_06.pdf · 17页",
+            "en": "03_Rank_06.pdf · 17 pages"
+          },
+          "chapters": [
+            5
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "FM",
+            "en": "Factorization machines"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/04_Cross_01.pdf",
+          "file": "04_Cross_01.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "04_Cross_01.pdf · 11页",
+            "en": "04_Cross_01.pdf · 11 pages"
+          },
+          "chapters": [
+            6
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "DCN V2",
+            "en": "DCN V2"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/04_Cross_02.pdf",
+          "file": "04_Cross_02.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "04_Cross_02.pdf · 24页",
+            "en": "04_Cross_02.pdf · 24 pages"
+          },
+          "chapters": [
+            6
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "LHUC / PPNet",
+            "en": "LHUC / PPNet"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/04_Cross_03.pdf",
+          "file": "04_Cross_03.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "04_Cross_03.pdf · 13页",
+            "en": "04_Cross_03.pdf · 13 pages"
+          },
+          "chapters": [
+            6
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "SENet 与 FiBiNET",
+            "en": "SENet and FiBiNET"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/04_Cross_04.pdf",
+          "file": "04_Cross_04.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "04_Cross_04.pdf · 22页",
+            "en": "04_Cross_04.pdf · 22 pages"
+          },
+          "chapters": [
+            6
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "LastN 均值特征",
+            "en": "Last-N mean features"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/05_LastN_01.pdf",
+          "file": "05_LastN_01.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "05_LastN_01.pdf · 7页",
+            "en": "05_LastN_01.pdf · 7 pages"
+          },
+          "chapters": [
+            2
+          ],
+          "scope": {
+            "zh": "已有对应方法实验；不代表完整论文或工业效果。",
+            "en": "A corresponding method experiment is available; this does not establish complete paper reproduction or industrial outcomes."
+          }
+        },
+        {
+          "title": {
+            "zh": "DIN",
+            "en": "Deep Interest Network"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/05_LastN_02.pdf",
+          "file": "05_LastN_02.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "05_LastN_02.pdf · 19页",
+            "en": "05_LastN_02.pdf · 19 pages"
+          },
+          "chapters": [
+            7
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "SIM",
+            "en": "Search-based Interest Model"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/05_LastN_03.pdf",
+          "file": "05_LastN_03.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "05_LastN_03.pdf · 16页",
+            "en": "05_LastN_03.pdf · 16 pages"
+          },
+          "chapters": [
+            7
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "多样性度量",
+            "en": "Diversity metrics"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/06_Rerank_01.pdf",
+          "file": "06_Rerank_01.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "06_Rerank_01.pdf · 15页",
+            "en": "06_Rerank_01.pdf · 15 pages"
+          },
+          "chapters": [
+            8
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "MMR",
+            "en": "Maximal Marginal Relevance"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/06_Rerank_02.pdf",
+          "file": "06_Rerank_02.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "06_Rerank_02.pdf · 12页",
+            "en": "06_Rerank_02.pdf · 12 pages"
+          },
+          "chapters": [
+            8
+          ],
+          "scope": {
+            "zh": "已有对应方法实验；不代表完整论文或工业效果。",
+            "en": "A corresponding method experiment is available; this does not establish complete paper reproduction or industrial outcomes."
+          }
+        },
+        {
+          "title": {
+            "zh": "重排规则",
+            "en": "Reranking rules"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/06_Rerank_03.pdf",
+          "file": "06_Rerank_03.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "06_Rerank_03.pdf · 8页",
+            "en": "06_Rerank_03.pdf · 8 pages"
+          },
+          "chapters": [
+            8
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "DPP 数学基础",
+            "en": "DPP mathematics"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/06_Rerank_04.pdf",
+          "file": "06_Rerank_04.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "06_Rerank_04.pdf · 17页",
+            "en": "06_Rerank_04.pdf · 17 pages"
+          },
+          "chapters": [
+            8
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "DPP 多样性算法",
+            "en": "DPP diversification"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/06_Rerank_05.pdf",
+          "file": "06_Rerank_05.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "06_Rerank_05.pdf · 18页",
+            "en": "06_Rerank_05.pdf · 18 pages"
+          },
+          "chapters": [
+            8
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "冷启动评价指标",
+            "en": "Cold-start metrics"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_01.pdf",
+          "file": "07_ColdStart_01.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "07_ColdStart_01.pdf · 18页",
+            "en": "07_ColdStart_01.pdf · 18 pages"
+          },
+          "chapters": [
+            9
+          ],
+          "scope": {
+            "zh": "机制可读；真实业务任务还需要额外数据与标签。",
+            "en": "A mechanism is readable; the real business task needs additional data and labels."
+          }
+        },
+        {
+          "title": {
+            "zh": "冷启动简单召回",
+            "en": "Simple cold-start retrieval"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_02.pdf",
+          "file": "07_ColdStart_02.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "07_ColdStart_02.pdf · 21页",
+            "en": "07_ColdStart_02.pdf · 21 pages"
+          },
+          "chapters": [
+            9
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "聚类召回",
+            "en": "Cluster retrieval"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_03.pdf",
+          "file": "07_ColdStart_03.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "07_ColdStart_03.pdf · 20页",
+            "en": "07_ColdStart_03.pdf · 20 pages"
+          },
+          "chapters": [
+            9
+          ],
+          "scope": {
+            "zh": "机制可读；真实业务任务还需要额外数据与标签。",
+            "en": "A mechanism is readable; the real business task needs additional data and labels."
+          }
+        },
+        {
+          "title": {
+            "zh": "Look-Alike 人群扩散",
+            "en": "Look-alike audience expansion"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_04.pdf",
+          "file": "07_ColdStart_04.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "07_ColdStart_04.pdf · 17页",
+            "en": "07_ColdStart_04.pdf · 17 pages"
+          },
+          "chapters": [
+            9
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "流量调控与保量",
+            "en": "Traffic control and guaranteed delivery"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_05.pdf",
+          "file": "07_ColdStart_05.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "07_ColdStart_05.pdf · 22页",
+            "en": "07_ColdStart_05.pdf · 22 pages"
+          },
+          "chapters": [
+            9
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "冷启动 A/B 测试",
+            "en": "Cold-start A/B testing"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/07_ColdStart_06.pdf",
+          "file": "07_ColdStart_06.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "07_ColdStart_06.pdf · 20页",
+            "en": "07_ColdStart_06.pdf · 20 pages"
+          },
+          "chapters": [
+            9
+          ],
+          "scope": {
+            "zh": "机制可读；真实业务任务还需要额外数据与标签。",
+            "en": "A mechanism is readable; the real business task needs additional data and labels."
+          }
+        },
+        {
+          "title": {
+            "zh": "指标优化总览",
+            "en": "Improving metrics: overview"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_01.pdf",
+          "file": "08_Improvement_01.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "08_Improvement_01.pdf · 7页",
+            "en": "08_Improvement_01.pdf · 7 pages"
+          },
+          "chapters": [
+            10
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "召回优化",
+            "en": "Retrieval improvements"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_02.pdf",
+          "file": "08_Improvement_02.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "08_Improvement_02.pdf · 20页",
+            "en": "08_Improvement_02.pdf · 20 pages"
+          },
+          "chapters": [
+            10
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "排序模型优化",
+            "en": "Ranking-model improvements"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_03.pdf",
+          "file": "08_Improvement_03.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "08_Improvement_03.pdf · 35页",
+            "en": "08_Improvement_03.pdf · 35 pages"
+          },
+          "chapters": [
+            10
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "多样性与探索",
+            "en": "Diversity and exploration"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_04.pdf",
+          "file": "08_Improvement_04.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "08_Improvement_04.pdf · 15页",
+            "en": "08_Improvement_04.pdf · 15 pages"
+          },
+          "chapters": [
+            8,
+            10
+          ],
+          "scope": {
+            "zh": "部分方法或机制练习；完整链路与规模未覆盖。",
+            "en": "Partial method or mechanism exercise; full pipelines and scale are not covered."
+          }
+        },
+        {
+          "title": {
+            "zh": "特殊人群",
+            "en": "Special user segments"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_05.pdf",
+          "file": "08_Improvement_05.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "08_Improvement_05.pdf · 23页",
+            "en": "08_Improvement_05.pdf · 23 pages"
+          },
+          "chapters": [
+            10
+          ],
+          "scope": {
+            "zh": "对应教学机制可读；原讲义完整方法仍是进阶目标。",
+            "en": "A related teaching mechanism is readable; the full method in the lecture remains an advanced objective."
+          }
+        },
+        {
+          "title": {
+            "zh": "交互行为与社交价值",
+            "en": "Interactions and social value"
+          },
+          "url": "https://github.com/wangshusen/RecommenderSystem/blob/main/Slides/08_Improvement_06.pdf",
+          "file": "08_Improvement_06.pdf",
+          "source_id": "R-WANG",
+          "locator": {
+            "zh": "08_Improvement_06.pdf · 24页",
+            "en": "08_Improvement_06.pdf · 24 pages"
+          },
+          "chapters": [
+            10
+          ],
+          "scope": {
+            "zh": "机制可读；真实业务任务还需要额外数据与标签。",
+            "en": "A mechanism is readable; the real business task needs additional data and labels."
+          }
+        }
+      ]
+    }
+  ]
+}

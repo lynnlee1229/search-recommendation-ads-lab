@@ -3,6 +3,10 @@ set -euo pipefail
 ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 case "${1:-help}" in
+  preview)
+    shift
+    exec python3 scripts/preview.py "$@"
+    ;;
   setup)
     shift
     exec ./setup.sh "$@"
@@ -31,6 +35,6 @@ case "${1:-help}" in
     .venv/bin/python -c 'import json; from reclab.notebook import stop; print(json.dumps(stop()))'
     ;;
   *)
-    printf '%s\n' 'setup: download, prepare and train the first four experiments' 'up: start localhost workbench without opening a browser' 'status | stop: inspect or stop the dashboard' 'notebook: start the project JupyterLab with token authentication' 'notebook-status | notebook-stop: inspect or stop JupyterLab and its kernels' 'test: run numerical and real-data acceptance checks' 'train --config configs/logq.json: create a new model version'
+    printf '%s\n' 'preview: read courses using Python only; no installation, downloads or training' 'setup --minimal: install the locked environment and Jupyter only' 'setup: download, prepare and train the recommendation/XMRec experiments' 'up: start localhost workbench without opening a browser' 'status | stop: inspect or stop the dashboard' 'notebook: start the project JupyterLab with token authentication' 'notebook-status | notebook-stop: inspect or stop JupyterLab and its kernels' 'test: run numerical and real-data acceptance checks' 'train --config configs/logq.json: create a new model version'
     ;;
 esac

@@ -5,16 +5,22 @@ ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 download_only=0
 notebooks=1
+minimal=0
 for arg in "$@"; do
   case "$arg" in
     --download-only) download_only=1 ;;
     --no-notebooks) notebooks=0 ;;
+    --minimal) minimal=1 ;;
     -h|--help)
-      printf '%s\n' 'Usage: ./setup.sh [--download-only] [--no-notebooks]' 'Default: install locked dependencies, download and verify public inputs, train missing models, test, execute notebooks 11-15.' 'No service is automatically started.'
+      printf '%s\n' 'Usage: ./setup.sh [--minimal | --download-only] [--no-notebooks]' '--minimal: install the locked environment and Jupyter kernel only; no datasets, models or training.' 'Default: install locked dependencies, download and verify public inputs, train missing models, test, execute notebooks 11-15.' 'Reading only? Run python3 scripts/preview.py; no package installation is needed.' 'No service is automatically started.'
       exit 0 ;;
     *) printf 'Unknown option: %s\n' "$arg" >&2; exit 2 ;;
   esac
 done
+if [[ "$minimal" == 1 && "$download_only" == 1 ]]; then
+  printf '%s\n' '--minimal and --download-only are mutually exclusive.' >&2
+  exit 2
+fi
 if [[ "$(uname -s)" == Darwin ]]; then
   major="$(sw_vers -productVersion | cut -d. -f1)"
   if [[ "$(uname -m)" != arm64 || "$major" -lt 14 ]]; then
@@ -53,6 +59,11 @@ else
 fi
 "$UV" sync --frozen --group dev --group notebooks
 PY="$ROOT/.venv/bin/python"
+if [[ "$minimal" == 1 ]]; then
+  "$PY" -m ipykernel install --prefix "$ROOT/.venv" --name reclab --display-name 'Search Recommendation Ads Lab (Python 3.12)'
+  printf '%s\n' 'Environment ready; no datasets were downloaded and no models were trained.' 'Run ./lab.sh up, open http://127.0.0.1:18580, and start with Foundations 31-34.' 'Real-data lessons also need the per-domain preparation commands in README.md.'
+  exit 0
+fi
 "$PY" download_public_assets.py
 "$PY" -m reclab.competition prepare
 if [[ "$download_only" == 1 ]]; then
