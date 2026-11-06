@@ -2,39 +2,39 @@
 
 **从第一个张量到可检查的真实实验，理解检索、排序和广告决策。**
 
-[English](README.md) · 简体中文 · [开始学习](docs/GETTING_STARTED.zh-CN.md) · [后续路线](docs/ROADMAP.zh-CN.md) · [参与贡献](CONTRIBUTING.md)
+**[直接阅读中文课程 →](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/)** · **[Read in English](https://lynnlee1229.github.io/search-recommendation-ads-lab/)**
 
-一个中英双语、以 Notebook 为主线的学习 Lab：**63 节课，四条路径**。沿课程体系学习，回查原始讲义，先预测结果，再改一个变量，运行后解释差异。可以先读课，再决定是否安装训练环境。
+[English](README.md) · 简体中文 · [安装指南](docs/GETTING_STARTED.zh-CN.md) · [后续路线](docs/ROADMAP.zh-CN.md) · [参与贡献](CONTRIBUTING.md)
+
+一个中英双语、以 Notebook 为主线的学习 Lab：**63 节课，四条路径**。沿课程体系学习，回查原始讲义，先预测结果，再改一个变量，运行后解释差异。在网页版直接读课程；配套实验与完整 Lab 体验建议 clone 本仓库后在本地运行。
 
 | 路径 | 学习主线 | 从这里开始 |
 |---|---|---|
-| **公用基础** · 4 节 | 张量 → 梯度 → 优化 → 评估 | [31 · 张量与线性代数](notebooks/31_Common_Tensors.ipynb) / [English](notebooks/en/31_Common_Tensors.ipynb) |
-| **搜索** · 19 节 | 用户需求 → 查询处理 → 召回 → 排序 → 查询推荐 | [35 · 需求与相关性判断](notebooks/35_Search_Needs_Judgments.ipynb) / [English](notebooks/en/35_Search_Needs_Judgments.ipynb) |
-| **广告** · 23 节 | 产品与市场 → 资格候选 → 响应预测 → 拍卖 → 投放反馈 | [47 · 广告产品与参与方](notebooks/47_Ads_Products.ipynb) / [English](notebooks/en/47_Ads_Products.ipynb) |
-| **推荐** · 17 节 | 用户行为 → 候选 → 排序 → 训练 → 评估 | [01 · 数据与 ItemCF](notebooks/01_Data_Features_ItemCF.ipynb) / [English](notebooks/en/01_Data_Features_ItemCF.ipynb) |
+| **公用基础** · 4 节 | 张量 → 梯度 → 优化 → 评估 | [31 · 张量与线性代数](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/common_31/) / [English](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/common_31/) |
+| **搜索** · 19 节 | 用户需求 → 查询处理 → 召回 → 排序 → 查询推荐 | [35 · 需求与相关性判断](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/search_35/) / [English](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/search_35/) |
+| **广告** · 23 节 | 产品与市场 → 资格候选 → 响应预测 → 拍卖 → 投放反馈 | [47 · 广告产品与参与方](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/ads_47/) / [English](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/ads_47/) |
+| **推荐** · 17 节 | 用户行为 → 候选 → 排序 → 训练 → 评估 | [01 · 数据与 ItemCF](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/data/) / [English](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/data/) |
 
 ![四条路径，共用一个学习工作台](docs/screenshots/overview.png)
 
 ## 先读课，再运行
 
-**无需安装：** 直接在 GitHub 打开上面的 Notebook。中英两版解释同一套实验；实验代码与历史输出保持一致，英文版仅增加一个工作目录初始化单元；中文分词样例和原始输出标签按实验需要保留。
+**在线阅读：** [直接进入中文课程](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/)，无需安装或登录。网站默认首页为英文，可切换到同一章节的中文版本，查看讲解、代码、历史结果和原始资料。网站不执行 Notebook，也不连接本机数据；原始 Notebook 仍可在 GitHub 查看：[中文版](notebooks) / [English](notebooks/en)。
 
-**本地阅读：** 克隆后用 Python 3.9+ 标准库启动预览，无需安装依赖、下载数据或训练模型。
+中英两版解释同一套实验；实验代码与历史输出保持一致，英文版仅增加一个工作目录初始化单元；中文分词样例和原始输出标签按实验需要保留。
+
+**配套实验与完整 Lab：** clone 仓库，安装项目环境，再启动本地工作台。
 
 ```bash
 git clone https://github.com/lynnlee1229/search-recommendation-ads-lab.git
 cd search-recommendation-ads-lab
-python3 scripts/preview.py
-```
-
-打开 [localhost:18580](http://127.0.0.1:18580)，选择 **中文 / English**，进入一条路径，阅读讲解、代码和已保存的输出。阅读模式不执行代码。若该端口已有 Lab 在运行，直接使用现有服务。
-
-**运行 Notebook：** 安装项目环境，再打开工作台。这一步安装 PyTorch、Jupyter 等依赖，不下载数据集、不训练模型。
-
-```bash
 ./setup.sh --minimal
 ./lab.sh up
 ```
+
+打开 [localhost:18580](http://127.0.0.1:18580)。最小安装准备 PyTorch、Jupyter 等依赖，不下载数据集、不训练模型。真实数据实验按[安装指南](docs/GETTING_STARTED.zh-CN.md)分别准备。
+
+**可选的本地阅读器：** clone 后运行 `python3 scripts/preview.py`，只需 Python 3.9+，无需安装项目依赖。它与完整 Lab 使用同一端口；如果 Lab 已运行，直接使用。切换到完整 Lab 前，在阅读器终端用 `Ctrl+C` 停止预览。
 
 完整流程已在 **Apple M1 Pro、16 GB、macOS 15、Python 3.12** 验证。macOS 安装要求 Apple Silicon、macOS 14+，并需要 `brew install libomp`。其他平台尚未完成相同范围的端到端验收。运行依赖真实数据的课程前，请查看[安装、先修与分领域数据准备](docs/GETTING_STARTED.zh-CN.md)。CPU 实验无需 GPU 或 Docker。
 
@@ -85,3 +85,5 @@ python3 scripts/preview.py
 欢迎更清楚的解释、数值反例、翻译修正、可复现的平台修复，以及范围明确的新实验。先读[贡献指南](CONTRIBUTING.md)和[后续路线](docs/ROADMAP.zh-CN.md)。如果它对学习有帮助，可以点一个 Star 留作索引；告诉我们卡在哪一节，也能直接帮助改进课程。
 
 [英文界面截图](docs/screenshots/english.png) · [实验协议](docs/GETTING_STARTED.zh-CN.md#实验协议) · [许可范围](LICENSE.md) · [第三方资料与权利](docs/THIRD_PARTY.md)
+
+[网站发布与收录说明](docs/PAGES_DISCOVERY.md)

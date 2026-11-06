@@ -2,13 +2,16 @@
 
 [English](GETTING_STARTED.md) · [项目首页](../README.zh-CN.md)
 
-所有课程都可以先阅读，再决定是否下载数据和训练。只读模式与可执行 Lab 使用同一套课程结构。
+[直接阅读中文课程](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/) · [English](https://lynnlee1229.github.io/search-recommendation-ads-lab/)
+
+所有课程都可以在网页先阅读，再决定是否下载数据和训练。网页版负责资料阅读；可编辑 Notebook、模型实验与完整体验在 clone 后的本地 Lab 中使用，两者保持同一套课程结构。
 
 ## 选择开始方式
 
 | 目的 | 需要什么 | 命令或入口 |
 |---|---|---|
-| 直接读一节课 | 浏览器 | [中文 Notebook](../notebooks) / [English](../notebooks/en) |
+| 在线阅读课程 | 浏览器 | [中文课程](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/) / [English（默认）](https://lynnlee1229.github.io/search-recommendation-ads-lab/) |
+| 查看原始 Notebook | 浏览器 | [中文 Notebook](../notebooks) / [English](../notebooks/en) |
 | 在本地浏览学习网站 | Git 与 Python 3.9+ | `python3 scripts/preview.py` |
 | 运行基础与构造机制课 | 项目 Python 环境 | `./setup.sh --minimal`，再执行 `./lab.sh up` |
 | 复现真实数据实验 | 环境、网络、磁盘与 CPU 时间 | 先按下文准备对应领域 |
@@ -30,7 +33,7 @@
 
 搜索 17 和广告 18 / 23 / 24 是主线后的综合参考。推荐 00 是原推荐课程导览；三领域共同先修是 31–34。
 
-**第一次可以这样学：** 读 [31 · 张量](../notebooks/31_Common_Tensors.ipynb)，先猜一个形状，再核对已有输出。之后选择 [35 · 搜索判断](../notebooks/35_Search_Needs_Judgments.ipynb)、[47 · 广告产品](../notebooks/47_Ads_Products.ipynb)或 [01 · 推荐数据](../notebooks/01_Data_Features_ItemCF.ipynb)。执行依赖数据的代码前，先读每课的先修和准备要求。
+**第一次可以这样学：** 读 [31 · 张量](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/common_31/)，先猜一个形状，再核对已有输出。之后选择 [35 · 搜索判断](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/search_35/)、[47 · 广告产品](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/ads_47/)或 [01 · 推荐数据](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/data/)。执行依赖数据的代码前，先读每课的先修和准备要求。
 
 每节遵循：
 
@@ -43,6 +46,13 @@
 负结果也有学习价值。搜索微调没有提升、FM 过拟合等结果会保留，而不会靠改评估或重训美化。
 
 ## 安装可执行环境
+
+先克隆项目。公开网站只读，实验在自己的项目目录中运行。
+
+```bash
+git clone https://github.com/lynnlee1229/search-recommendation-ads-lab.git
+cd search-recommendation-ads-lab
+```
 
 完整流程已在 Apple M1 Pro、16 GB 内存、macOS 15 验证。当前 macOS 安装要求 Apple Silicon 和 macOS 14 以上；Linux / Windows 尚未完成同等范围验收，遇到问题请提供可复现信息。标准库阅读器的依赖要求低于完整训练。
 

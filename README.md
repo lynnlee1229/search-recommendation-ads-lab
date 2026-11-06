@@ -2,39 +2,39 @@
 
 **Learn how retrieval, ranking, and advertising decisions work—from the first tensor to an inspectable experiment.**
 
-English · [简体中文](README.zh-CN.md) · [Start learning](docs/GETTING_STARTED.md) · [Roadmap](docs/ROADMAP.md) · [Contribute](CONTRIBUTING.md)
+**[Read online →](https://lynnlee1229.github.io/search-recommendation-ads-lab/)** · **[中文课程](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/)**
 
-A bilingual, notebook-first learning lab with **63 lessons across four paths**. Follow a curriculum, read the original sources, predict what will happen, change one variable, and explain the result. Read the lessons before installing the training environment.
+English · [简体中文](README.zh-CN.md) · [Setup guide](docs/GETTING_STARTED.md) · [Roadmap](docs/ROADMAP.md) · [Contribute](CONTRIBUTING.md)
+
+A bilingual, notebook-first learning lab with **63 lessons across four paths**. Follow a curriculum, read the original sources, predict what will happen, change one variable, and explain the result. Open the public course reader in your browser; clone this repository for the accompanying experiments and complete Lab experience.
 
 | Path | What you will learn | Start here |
 |---|---|---|
-| **Foundations** · 4 lessons | Tensors → gradients → optimization → evaluation | [31 · Tensors](notebooks/en/31_Common_Tensors.ipynb) / [中文](notebooks/31_Common_Tensors.ipynb) |
-| **Search** · 19 lessons | User needs → query processing → retrieval → ranking → suggestions | [35 · Relevance judgments](notebooks/en/35_Search_Needs_Judgments.ipynb) / [中文](notebooks/35_Search_Needs_Judgments.ipynb) |
-| **Advertising** · 23 lessons | Products and markets → eligibility → response prediction → auctions → feedback | [47 · Advertising products](notebooks/en/47_Ads_Products.ipynb) / [中文](notebooks/47_Ads_Products.ipynb) |
-| **Recommendation** · 17 lessons | Behavior → candidates → ranking → training → evaluation | [01 · Data and ItemCF](notebooks/en/01_Data_Features_ItemCF.ipynb) / [中文](notebooks/01_Data_Features_ItemCF.ipynb) |
+| **Foundations** · 4 lessons | Tensors → gradients → optimization → evaluation | [31 · Tensors](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/common_31/) / [中文](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/common_31/) |
+| **Search** · 19 lessons | User needs → query processing → retrieval → ranking → suggestions | [35 · Relevance judgments](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/search_35/) / [中文](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/search_35/) |
+| **Advertising** · 23 lessons | Products and markets → eligibility → response prediction → auctions → feedback | [47 · Advertising products](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/ads_47/) / [中文](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/ads_47/) |
+| **Recommendation** · 17 lessons | Behavior → candidates → ranking → training → evaluation | [01 · Data and ItemCF](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/data/) / [中文](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/lessons/data/) |
 
 ![The learning workbench: four paths in one Lab](docs/screenshots/english.png)
 
-## Read first. Run when you are ready.
+## Quick start
 
-**No installation:** open any notebook linked above on GitHub. English and Chinese editions explain the same experiments. Experiment code and saved outputs remain unchanged; English notebooks add one directory-setup cell. Chinese examples and original output labels are retained where they are part of an experiment.
+**Read online:** [open the course website](https://lynnlee1229.github.io/search-recommendation-ads-lab/)—no installation or account required. It opens in English; the language switch takes you to the matching Chinese page. Read explanations, code, recorded results and original source references. The website does not execute notebooks or expose local data. The source notebooks remain available on GitHub in [English](notebooks/en) and [Chinese](notebooks).
 
-**Local reader:** clone the repository and run the Python 3.9+ standard-library preview. No package installation, datasets, model downloads, or training are required.
+English and Chinese editions explain the same experiments. Experiment code and saved outputs remain unchanged; English notebooks add one directory-setup cell. Chinese examples and original output labels are retained where they are part of an experiment.
+
+**Run the experiments and use the complete Lab:** clone the repository, install the project environment, and open the workbench.
 
 ```bash
 git clone https://github.com/lynnlee1229/search-recommendation-ads-lab.git
 cd search-recommendation-ads-lab
-python3 scripts/preview.py
-```
-
-Open [localhost:18580](http://127.0.0.1:18580). Choose **中文 / English**, pick a path, and read the lesson with its code and recorded outputs. This mode does not execute code. If a Lab is already running on that port, use the existing Lab.
-
-**Run the notebooks:** install the project environment, then open the workbench. This step installs dependencies, including PyTorch and Jupyter, but does not download datasets or train models.
-
-```bash
 ./setup.sh --minimal
 ./lab.sh up
 ```
+
+Open [localhost:18580](http://127.0.0.1:18580). The minimal setup installs dependencies, including PyTorch and Jupyter, without downloading datasets or training models. Prepare each real-data domain using the [setup guide](docs/GETTING_STARTED.md).
+
+**Optional local reader:** after cloning, `python3 scripts/preview.py` serves the reading experience with Python 3.9+ and no installed packages. It uses the same port; if the full Lab is already running, use it instead. Stop your preview with `Ctrl+C` before starting the full Lab.
 
 The full workflow was tested on **Apple M1 Pro, 16 GB, macOS 15, Python 3.12**. The macOS setup requires Apple Silicon, macOS 14+, and `brew install libomp`. Other platforms have not received the same end-to-end validation. See [setup, prerequisites, and domain downloads](docs/GETTING_STARTED.md) before running data-dependent lessons. CPU experiments do not require a GPU or Docker.
 
@@ -84,4 +84,4 @@ These commands download inputs and run experiments. Read [Getting started](docs/
 
 Useful contributions include a clearer explanation, a numerical counterexample, a translation correction, a reproducible platform fix, or a well-scoped new experiment. Start with the [contribution guide](CONTRIBUTING.md) and [roadmap](docs/ROADMAP.md). If the Lab helps you learn, a star makes it easier to find again; an issue describing where you got stuck helps improve the next lesson.
 
-[English interface screenshot](docs/screenshots/english.png) · [Technical protocols](docs/GETTING_STARTED.md#experiment-protocols) · [License scope](LICENSE.md) · [Third-party materials and rights](docs/THIRD_PARTY.md)
+[English interface screenshot](docs/screenshots/english.png) · [Technical protocols](docs/GETTING_STARTED.md#experiment-protocols) · [License scope](LICENSE.md) · [Third-party materials and rights](docs/THIRD_PARTY.md) · [Publishing and discovery](docs/PAGES_DISCOVERY.md)

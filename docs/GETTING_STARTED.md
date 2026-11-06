@@ -2,13 +2,16 @@
 
 [简体中文](GETTING_STARTED.zh-CN.md) · [Project overview](../README.md)
 
-You can read every lesson before downloading data or training anything. The reader and the executable Lab use the same course structure.
+[Open the English course website](https://lynnlee1229.github.io/search-recommendation-ads-lab/) · [中文课程](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/)
+
+Read every lesson online before downloading data or training anything. The public website is the reading experience; clone the repository for editable notebooks, model experiments and the complete local Lab. Both use the same course structure.
 
 ## Choose how to start
 
 | Goal | What you need | Command or link |
 |---|---|---|
-| Read a lesson now | A browser | [English notebooks](../notebooks/en) / [中文](../notebooks) |
+| Read courses online | A browser | [English (default)](https://lynnlee1229.github.io/search-recommendation-ads-lab/) / [中文](https://lynnlee1229.github.io/search-recommendation-ads-lab/zh/) |
+| Inspect the original notebooks | A browser | [English notebooks](../notebooks/en) / [中文](../notebooks) |
 | Browse the local learning site | Git and Python 3.9+ | `python3 scripts/preview.py` |
 | Run foundation and constructed-mechanism lessons | Project Python environment | `./setup.sh --minimal`, then `./lab.sh up` |
 | Reproduce real-data experiments | Environment, network access, disk, CPU time | Prepare the domain below before running its lessons |
@@ -30,7 +33,7 @@ Start with **31 → 32 → 33 → 34** if you need tensors, differentiation, opt
 
 Search 17 and advertising 18 / 23 / 24 are comprehensive references after the main path. Recommendation 00 is the original recommendation overview; foundations 31–34 are the common prerequisite for all domains.
 
-**A useful first session:** read [31 · Tensors](../notebooks/en/31_Common_Tensors.ipynb), predict one shape, and check the recorded output. Then choose [35 · Search judgments](../notebooks/en/35_Search_Needs_Judgments.ipynb), [47 · Ad products](../notebooks/en/47_Ads_Products.ipynb), or [01 · Recommendation data](../notebooks/en/01_Data_Features_ItemCF.ipynb). Use the lesson's prerequisites before executing code that needs data.
+**A useful first session:** read [31 · Tensors](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/common_31/), predict one shape, and check the recorded output. Then choose [35 · Search judgments](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/search_35/), [47 · Ad products](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/ads_47/), or [01 · Recommendation data](https://lynnlee1229.github.io/search-recommendation-ads-lab/en/lessons/data/). Use the lesson's prerequisites before executing code that needs data.
 
 For each lesson:
 
@@ -43,6 +46,13 @@ For each lesson:
 A negative result is still a result. Search fine-tuning and FM examples deliberately retain outcomes that did not improve the chosen metric.
 
 ## Install the executable environment
+
+Clone the project first. The public course site is read-only; execution stays in your own checkout.
+
+```bash
+git clone https://github.com/lynnlee1229/search-recommendation-ads-lab.git
+cd search-recommendation-ads-lab
+```
 
 The full environment has been tested on an Apple M1 Pro with 16 GB RAM, using macOS 15. The current macOS setup requires Apple Silicon and macOS 14 or newer. Linux and Windows have not received the same full workflow acceptance; report a reproducible platform issue rather than assuming support. The standard-library reader has a smaller dependency surface than training.
 
