@@ -11,6 +11,7 @@ import json
 import os
 from pathlib import Path
 import re
+import subprocess
 from urllib.error import HTTPError, URLError
 from urllib.parse import unquote, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
@@ -57,7 +58,16 @@ def sitemap_urls(xml, site):
     return urls
 
 
-def fetch(url):
+def fetch(url, transport='urllib'):
+    if transport == 'curl':
+        response = subprocess.run(['curl', '--http1.1', '--silent', '--show-error',
+                                   '--max-time', '25', '--max-filesize', '2000000',
+                                   '--proto', '=https', '--write-out', '\n%{http_code}', url],
+                                  capture_output=True, timeout=30)
+        body, _, status = response.stdout.rpartition(b'\n')
+        if response.returncode or status != b'200' or len(body) > 2_000_000:
+            raise ValueError('Live verification failed; no notification sent')
+        return body
     request = Request(url, headers={'User-Agent': 'SearchRecAdsLab-IndexNow/1.0'})
     with build_opener(NoRedirect).open(request, timeout=25) as response:
         data = response.read(2_000_001)
@@ -66,14 +76,31 @@ def fetch(url):
         return data
 
 
+def post_once(body, transport='urllib'):
+    if transport == 'curl':
+        response = subprocess.run(['curl', '--http1.1', '--silent', '--show-error',
+                                   '--max-time', '25', '--proto', '=https',
+                                   '--request', 'POST', '--header', 'Content-Type: application/json; charset=utf-8',
+                                   '--data-binary', '@-', '--output', os.devnull,
+                                   '--write-out', '%{http_code}', ENDPOINT],
+                                  input=body, capture_output=True, timeout=30)
+        return int(response.stdout) if response.returncode == 0 and response.stdout.isdigit() else None
+    request = Request(ENDPOINT, data=body, method='POST', headers={
+        'Content-Type': 'application/json; charset=utf-8',
+        'User-Agent': 'SearchRecAdsLab-IndexNow/1.0'})
+    with build_opener(NoRedirect).open(request, timeout=25) as response:
+        return response.status
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--site-url', default=DEFAULT_SITE)
     parser.add_argument('--submit', action='store_true', help='Send exactly one POST after live ownership verification')
+    parser.add_argument('--transport', choices=('urllib', 'curl'), default='urllib', help='Use curl HTTP/1.1 if the local Python HTTP stack receives truncated responses; neither transport retries')
     parser.add_argument('--receipt', type=Path, help='Save a non-secret JSON receipt')
     args = parser.parse_args()
     site = site_url(args.site_url)
-    urls = sitemap_urls(fetch(site + 'sitemap.xml'), site)
+    urls = sitemap_urls(fetch(site + 'sitemap.xml', args.transport), site)
     receipt = {'site': site, 'sitemap': site + 'sitemap.xml', 'url_count': len(urls),
                'endpoint': ENDPOINT, 'time_utc': datetime.now(timezone.utc).isoformat(),
                'submitted': False, 'status': 'dry_run', 'indexed': 'not verified'}
@@ -82,19 +109,15 @@ def main():
         if not re.fullmatch(r'[a-zA-Z0-9-]{8,128}', key):
             raise ValueError('Set a valid INDEXNOW_KEY environment variable')
         location = site + key + '.txt'
-        if fetch(location).decode('utf-8').strip() != key:
+        if fetch(location, args.transport).decode('utf-8').strip() != key:
             raise ValueError('Live key verification failed; no URLs submitted')
         body = json.dumps({'host': urlsplit(site).hostname, 'key': key,
                            'keyLocation': location, 'urlList': urls}).encode('utf-8')
-        request = Request(ENDPOINT, data=body, method='POST', headers={
-            'Content-Type': 'application/json; charset=utf-8',
-            'User-Agent': 'SearchRecAdsLab-IndexNow/1.0'})
         try:
-            with build_opener(NoRedirect).open(request, timeout=25) as response:
-                status = response.status
+            status = post_once(body, args.transport)
         except HTTPError as error:
             status = error.code
-        except (URLError, TimeoutError, OSError):
+        except (URLError, TimeoutError, OSError, subprocess.TimeoutExpired):
             status = None
         receipt.update(submitted=True, http_status=status,
                        status={200: 'received', 202: 'key_validation_pending',

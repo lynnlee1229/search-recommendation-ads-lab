@@ -38,3 +38,9 @@
 `docs/learning.json`是当前课程阶段、语义单元、来源定位和证据边界的双语数据源；`web/navigation.js`保留路由拓扑与回退目录。`docs/notebooks.en.json`追踪英文教材与中文源内容摘要，CI检测漂移。章节编号和原63本身份不变，英文版是伴随版本，不计为新增独立课程。
 
 阅读和运行是不同操作。`reclab/learning_catalog.py`只使用标准库，被完整FastAPI与`scripts/preview.py`共同使用，读取课程不会下载数据、加载训练模型或启动内核。reader渲染经过清洗的Markdown和严格白名单的DataFrame，代码与输出不会在网页执行；运行按钮仍指向项目认证Jupyter。语言通过URL/本机偏好保存，章节完成标记只在用户点击后写入本机浏览器。
+
+## 公开静态阅读站（2026-11-07）
+
+公开站复用`reclab/learning_catalog.py`读取的同一课程数据源。`scripts/build_pages.py`在构建时把双语Notebook Markdown/代码/已保存输出转换为静态HTML；`web/public/render.py`负责页面呈现，CSS/JS仅增强筛选、复制和本机完成标记。关键内容无需JavaScript、后端API、数据库或Jupyter。构建依赖Python标准库和Node，运行学习实验不新增Node要求。
+
+URLs按`/{en|zh}/{module}/`与`/{en|zh}/lessons/{target}/`组织，统一加项目子目录前缀。根页直接显示英文，canonical指向`/en/`；语言按钮跳同一章节对应版本，不根据浏览器语言自动跳转。数据与模型使用明确导出白名单隔离。公开站只展示和链接资料；运行操作指向clone说明，完整交互仍由本地Lab提供。

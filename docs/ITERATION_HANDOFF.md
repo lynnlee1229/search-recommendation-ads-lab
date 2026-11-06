@@ -1,3 +1,11 @@
+## GitHub Pages 公开阅读站（2026-11-07）
+
+同一Lab新增公开入口 https://lynnlee1229.github.io/search-recommendation-ads-lab/ ，根入口英文，中文 `/zh/`。公用/搜/广/推各自路线与63本中英文教材由同一课程数据源构建，正文预渲染为HTML；实验、训练、Jupyter和完整工作台仍在clone后的本地项目运行。README优先链接网页版。
+
+`python3 scripts/build_pages.py --output dist` 用Python标准库与Node（仅构建需要）生成136个canonical页面、126个课程页，以及英文根别名/404、sitemap和社交预览。`web/public/`仅定义公开阅读界面，不替换本地workbench。`pages.yml`在main的课程/构建源码变化后检查并上传dist，通过GitHub官方Pages Actions部署；PR只检查。没有数据集、模型、日志或本地认证信息被复制到站点。
+
+收录事实与维护见[PAGES_DISCOVERY.md](PAGES_DISCOVERY.md)。IndexNow验证材料保存在repository Actions secret `PAGES_INDEXNOW_KEY`，构建时通过环境变量生成协议需要的公开验证文件；不提交源码或打印key。提交脚本默认dry-run，只有明确`--submit`才在核验线上sitemap与验证文件后发一次请求；不自动重复通知或声称已收录。Google Search Console仍需对应账号的站点验证。不改动已有用户主页仓库或域名根robots规则。
+
 ## 公开双语学习体验（2026-11-07）
 
 同一仓库、同一18580工作台增加课程阅读层：四模块课程与56份原始讲义入口由`docs/learning.json`提供双语来源/单元/章节映射；英文教材在`notebooks/en`，原63本及历史实验保持。新`/api/learning`、`/api/lessons/{target}`、`/learn/{target}`不依赖数据或启动Jupyter；`/notebooks?target=...&lang=en`进入英文伴随版本，token认证与同源保护保持。

@@ -7,6 +7,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
+from types import SimpleNamespace
 
 spec = importlib.util.spec_from_file_location('submit_indexnow', Path(__file__).resolve().parents[1] / 'scripts/submit_indexnow.py')
 submission = importlib.util.module_from_spec(spec)
@@ -20,6 +21,18 @@ def xml(*urls):
 
 
 class IndexNowBoundaries(unittest.TestCase):
+    def test_curl_posts_once_with_payload_on_stdin_and_no_redirect_or_retry(self):
+        payload = b'{"key":"verification-material"}'
+        with patch.object(submission.subprocess, 'run', return_value=SimpleNamespace(returncode=0, stdout=b'202')) as run:
+            self.assertEqual(submission.post_once(payload, 'curl'), 202)
+            self.assertEqual(run.call_count, 1)
+            command = run.call_args.args[0]
+            self.assertEqual(run.call_args.kwargs['input'], payload)
+            self.assertNotIn('verification-material', ' '.join(command))
+            self.assertNotIn('--retry', command)
+            self.assertNotIn('--location', command)
+            self.assertNotIn('-L', command)
+
     def test_ambiguous_post_is_recorded_without_retry_or_key_leak(self):
         key = '0123456789abcdef0123456789abcdef'
         with tempfile.TemporaryDirectory() as directory:
